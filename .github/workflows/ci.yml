@@ -23,6 +23,6 @@ jobs:
     - uses: browser-actions/setup-chrome@latest
     - run: chrome --version
     - name: Set up database schema
-        run: | 
-          bundle exec rake db:create
-          bundle exec rake db:migrate
+      run: |
+        bundle exec rake db:create
+        bundle exec rake db:migrate
