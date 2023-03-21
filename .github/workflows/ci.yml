@@ -16,10 +16,10 @@ jobs:
       RAILS_MASTER_KEY: ${{ secrets.RAILS_MASTER_KEY }}
 
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
     - uses: actions/setup-ruby@v1
       with:
-        ruby-version: '3.0.0' 
+        ruby-version: '3.0.3' 
     - uses: browser-actions/setup-chrome@latest
     - run: chrome --version
     - name: Build and run tests
