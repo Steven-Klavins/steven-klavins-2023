@@ -13,3 +13,153 @@
  *= require_tree .
  *= require_self
  */
+
+/* ===== Client Reset ===== */
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+@font-face {
+    font-family: "Roboto-Regular";
+    src: url('Roboto-Regular.ttf');
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+
+h2 {
+    font-size: 3rem;
+    font-family: "Roboto-Regular";
+    text-align: center;
+}
+
+/* ===== Utils ===== */
+
+.page-container {
+    padding: 10px;
+}
+
+/* ===== Navigation Desktop ===== */
+
+.main-navigation {
+    display: flex;
+    width: 100%;
+    padding: 10px;
+    border-bottom: solid 0.1rem rgba(242, 242, 242, 1);
+    margin-bottom: 1rem;
+}
+
+.main-navigation div {
+    width: 50%;
+}
+
+.main-navigation a {
+    text-decoration: none;
+    margin-right: 1rem;
+    font-family: "Roboto-Regular";
+    color: #2a2a2a;
+}
+
+.main-navigation .title {
+    font-size: 20px;
+    font-family: "Roboto-Regular";
+    color: #2a2a2a;
+}
+
+.main-navigation .items {
+    text-align: right;
+    align-self: center;
+    font-size: 2rem;
+}
+
+/* ===== Navigation Mobile ===== */
+
+.main-navigation-mobile {
+    position: relative;
+    display: none;
+    width: 100%;
+    padding: 10px;
+    border-bottom: solid 0.1rem rgba(242, 242, 242, 1);
+}
+
+.main-navigation-mobile .title {
+    font-size: 20px;
+    font-family: "Roboto-Regular";
+    color: #2a2a2a;
+}
+
+/* ===== Hamburger Toggle ===== */
+
+.hamburger-container {
+    position: absolute;
+    right: 2rem;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.hamburger:hover{
+    cursor: pointer;
+    display: block;
+}
+
+.hamburger .line{
+    width: 5rem;
+    height: 0.5rem;
+    background-color: #2a2a2a;
+    display: block;
+    margin: 0.8rem auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+#hamburger.is-active .line:nth-child(2){
+    opacity: 0;
+}
+
+#hamburger.is-active .line:nth-child(1){
+    -webkit-transform: translateY(1.3rem) rotate(45deg);
+    -ms-transform: translateY(1.3rem) rotate(45deg);
+    -o-transform: translateY(1.3rem) rotate(45deg);
+    transform: translateY(1.3rem) rotate(45deg);
+}
+
+#hamburger.is-active .line:nth-child(3){
+    -webkit-transform: translateY(-1.3rem) rotate(-45deg);
+    -ms-transform: translateY(-1.3rem) rotate(-45deg);
+    -o-transform: translateY(-1.3rem) rotate(-45deg);
+    transform: translateY(-1.3rem) rotate(-45deg);
+}
+
+.mobile-menu {
+    display: none;
+    text-align: center;
+    font-size: 2rem;
+}
+
+/* ===== Media Queries ===== */
+
+@media screen and (max-width: 600px) {
+    .main-navigation {
+        display: none;
+    }
+
+    .main-navigation-mobile {
+        display: flex;
+    }
+
+    html {
+        box-sizing: border-box;
+        font-size: 50%;
+    }
+}
