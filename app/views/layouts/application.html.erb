@@ -10,69 +10,11 @@
   <%= javascript_importmap_tags %>
 </head>
 
-<div class="main-navigation" id="main-navigation">
-  <div class="title">
-    <h1>Steven Klavins</h1>
-  </div>
-  <div class="items">
-    <a href="#home" class="active">Home</a>
-    <a href="#news">Blog</a>
-    <a href="#contact">About</a>
-    <a href="#contact">Contact</a>
-  </div>
-</div>
-
-<div class="main-navigation-mobile" id="main-navigation-mobile">
-  <div class="title">
-    <h1>Steven Klavins</h1>
-  </div>
-
-  <div class="hamburger-container">
-    <div class="hamburger" id="hamburger" onclick="hamburgerIsActive()">
-      <span class="line"></span>
-      <span class="line"></span>
-      <span class="line"></span>
-    </div>
-  </div>
-</div>
-
-<ul class="mobile-menu" id="mobile-menu">
-  <li href="#home" class="active">Home</li>
-  <li href="#news">Blog</li>
-  <li href="#contact">About</li>
-  <li href="#contact">Contact</li>
-</ul>
-
-<script>
-   function hideMenu() {
-       document.getElementById("mobile-menu").style.display = "none";
-       document.getElementById("hamburger").classList.remove("is-active")
-    };
-
-  function showMenu() {
-      if(window.innerWidth < 600) {
-          console.log(window.innerWidth)
-          document.getElementById("mobile-menu").style.display = "block"
-          document.getElementById("hamburger").classList.add("is-active")
-      }
-  };
-
-   // Hide mobile menu on larger screens
-   window.addEventListener("resize", () => {if (window.innerWidth > 600) hideMenu()});
-
-  // Add and remove the is-active CSS class to trigger the animation and dropdown menu.
-    function hamburgerIsActive() {
-        let hamburger = document.getElementById("hamburger");
-
-        if (hamburger.classList.contains("is-active")) {
-            hideMenu()
-        } else {
-            showMenu()
-        }
-    }
-</script>
+<%= render 'shared/navigation' %>
 
 <body>
 <%= yield %>
 </body>
+
+<%= render 'shared/footer' %>
 </html>
