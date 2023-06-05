@@ -1,8 +1,8 @@
+<% #========= Desktop Navigation ========= %>
+
 <div class="main-navigation" id="main-navigation">
   <div class="title">
-    <a href="<%= root_path %>">
-      <h1>Steven Klavins</h1>
-    </a>
+    <%= svg('steven-klavins-logo.svg', root_path) %>
   </div>
   <div class="items">
     <%= link_to "Home", root_path %>
@@ -12,11 +12,11 @@
   </div>
 </div>
 
+<% #========= Mobile Navigation ========= %>
+
 <div class="main-navigation-mobile" id="main-navigation-mobile">
   <div class="title">
-    <a href="<%= root_path %>">
-      <h1>Steven Klavins</h1>
-    </a>
+    <%= svg('steven-klavins-logo.svg', root_path) %>
   </div>
 
   <div class="hamburger-container">
@@ -28,7 +28,7 @@
   </div>
 </div>
 
-<div class="mobile-menu" id="mobile-menu">
+<div class="mobile-menu hidden" id="mobile-menu">
   <ul>
     <li class="active">
       <%= link_to "Home", root_path %>
@@ -45,19 +45,21 @@
 
 <script>
     function hideMenu() {
-        document.getElementById("mobile-menu").style.display = "none";
+        document.getElementById("mobile-menu").classList.replace("open", "hidden")
         document.getElementById("hamburger").classList.remove("is-active")
     };
 
     function showMenu() {
-        if(window.innerWidth < 600) {
-            document.getElementById("mobile-menu").style.display = "block"
+        if (window.innerWidth < 600) {
+            document.getElementById("mobile-menu").classList.replace("hidden", "open")
             document.getElementById("hamburger").classList.add("is-active")
         }
     };
 
     // Hide mobile menu on larger screens
-    window.addEventListener("resize", () => {if (window.innerWidth > 600) hideMenu()});
+    window.addEventListener("resize", () => {
+        if (window.innerWidth > 600) hideMenu()
+    });
 
     // Add and remove the is-active CSS class to trigger the animation and dropdown menu.
     function hamburgerIsActive() {
