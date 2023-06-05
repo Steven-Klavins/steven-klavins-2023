@@ -49,6 +49,19 @@ h2 {
     padding: 10px;
 }
 
+.text-block {
+    width: 80%;
+    max-width: 100rem;
+    margin: 2rem auto;
+    font-size: 1.8rem;
+    font-family: "Roboto-Regular";
+}
+
+.text-block a {
+    text-decoration: none;
+    color: blue;
+}
+
 /* ===== Title ===== */
 
 .title {
@@ -57,8 +70,14 @@ h2 {
 }
 
 .title a {
+    display: inline-block;
     text-decoration: none;
     color: #2a2a2a;
+}
+
+.title svg {
+    display: inline-block;
+    max-height: 50px;
 }
 
 /* ===== Navigation Desktop ===== */
@@ -68,7 +87,7 @@ h2 {
     width: 100%;
     padding: 10px;
     border-bottom: solid 0.1rem rgba(242, 242, 242, 1);
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
 }
 
 .main-navigation div {
@@ -96,6 +115,7 @@ h2 {
     width: 100%;
     padding: 10px;
     border-bottom: solid 0.1rem rgba(242, 242, 242, 1);
+    margin-bottom: 2rem;
 }
 
 .main-navigation-mobile .title {
@@ -153,15 +173,42 @@ h2 {
 
 .mobile-menu {
     position: absolute;
-    display: none;
     width: 100%;
-    padding: 1rem;
-    background-color: rgba(242, 242, 242, 1);
     text-align: center;
+}
+
+.hidden {
+    opacity: 0%;
+    pointer-events: none;
+    height:0px;
+    -webkit-transition:height, 0.3s linear;
+    -moz-transition: height, 0.3s linear;
+    -ms-transition: height, 0.3s linear;
+    -o-transition: height, 0.3s linear;
+    transition: height, 0.3s linear;
+}
+.open {
+    height:200px;
+    padding: 1rem;
+    background-color: white;
+    border-bottom: solid 0.2rem rgba(242, 242, 242, 1);
+    display: flex;
+    -webkit-transition:height, 0.3s linear;
+    -moz-transition: height, 0.3s linear;
+    -ms-transition: height, 0.3s linear;
+    -o-transition: height, 0.3s linear;
+    transition: height, 0.3s linear;
 }
 
 .mobile-menu ul {
     list-style-type: none;
+    vertical-align: middle;
+    margin: auto;
+}
+
+.mobile-menu li {
+    width: 100%;
+    padding: 1rem;
 }
 
 .mobile-menu a{
@@ -171,16 +218,42 @@ h2 {
     font-size: 3rem;
 }
 
+.mobile-menu a:hover {
+    text-decoration: underline;
+}
+
 /* ===== Footer ===== */
 
 .footer {
     position: fixed;
     left: 0;
     bottom: 0;
-    height: 3rem;
+    height: 72px;
     width: 100%;
     text-align: center;
     border-top: solid 0.1rem rgba(242, 242, 242, 1);
+    background-color: white;
+}
+
+.footer li {
+    list-style-type: none;
+}
+
+.footer p {
+    margin-top: 52px;
+    font-size: 12px;
+    color: #2a2a2a;
+    font-family: Roboto-Regular;
+}
+
+.footer-icons {
+    width: 180px;
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: space-between;
 }
 
 /* ===== Media Queries ===== */
@@ -192,6 +265,10 @@ h2 {
 
     .main-navigation-mobile {
         display: flex;
+    }
+
+    .title {
+        display: contents;
     }
 
     html {
