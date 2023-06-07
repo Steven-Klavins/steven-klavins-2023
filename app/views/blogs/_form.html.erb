@@ -1,0 +1,34 @@
+<div>
+  <%= form_with(model: blog) do |form| %>
+    <% if blog.errors.any? %>
+      <div class="error">
+        <ul>
+          <% blog.errors.each do |error| %>
+            <li><%= error.full_message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="blog-form">
+      <div class="trix-overrides">
+        <div>
+          <%= form.text_field :title, placeholder: "Title", maxlength: 60 %>
+        </div>
+
+        <div class="file-upload">
+          <%= form.label :cover_image, style: "display: block" %>
+          <%= form.file_field :cover_image %>
+        </div>
+
+        <div >
+          <%= form.label :categories, style: "display: block" %>
+          <%= form.select :category_ids, Category.pluck(:name, :id), {}, { multiple: true, data: { controller: "slim" } }%>
+        </div>
+
+        <%= form.rich_text_area :body %>
+        <%= form.submit %>
+      </div>
+    </div>
+  <% end %>
+</div>
