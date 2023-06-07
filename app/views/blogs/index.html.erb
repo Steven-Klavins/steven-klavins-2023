@@ -1,0 +1,54 @@
+<h1>Blog</h1>
+<div>
+  <p class="notice" ><%= notice %></p>
+  <div class="blog-container">
+    <div class="blog-cards">
+      <% @blogs.each do |blog| %>
+        <div class="blog-card-container">
+          <a href="<%= blog_path blog %>" style="width: 100%">
+            <div class="blog-card"
+                 <% if blog.cover_image.attached? %>
+                 style="background-image: url('<%= url_for(blog.cover_image.url) %>');"
+                 <% end %>
+                 >
+              <h3><%= blog.title %></h3>
+
+              <div class="blog-card-overlay"></div>
+
+              <div class="blog-categories-overlay">
+                <ul>
+                  <% blog.categories.each do |category| %>
+                    <li>
+                      <%= category.name %>
+                    </li>
+                  <% end %>
+                </ul>
+              </div>
+
+              <div class="blog-card-date">
+                <span><%= blog.created_at.day.ordinalize %></span>
+                <span><%= blog.created_at.strftime('%b') %></span>
+                <span><%= blog.created_at.strftime('%y') %></span>
+              </div>
+            </div>
+          </a>
+        </div>
+      <% end %>
+      
+      <div class="pagination-block">
+        <%= paginate @blogs %>
+      </div>
+    </div>
+
+    <div class="blog-categories-box">
+      <h3>Catigories</h3>
+      <ul>
+        <% Category.all.each do |category| %>
+          <li>
+            <a href="/"><%= category.name %></a>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>
