@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-  resources :categories
+  resources :categories, path: '/blogs/category' do
+    get '/page/:page', action: :index, on: :collection
+  end
+
   resources :blogs do
     get '/page/:page', action: :index, on: :collection
   end
