@@ -1,5 +1,6 @@
 class Blog < ApplicationRecord
   validates_presence_of :title, :body
+  validates :title, length: { maximum: 60 }
 
   has_many :blogs_categories
   has_many :categories, through: :blogs_categories
