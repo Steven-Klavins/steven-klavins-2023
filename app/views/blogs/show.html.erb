@@ -7,7 +7,7 @@
 <p class="notice" ><%= notice %></p>
 
 <div class="blog-actions">
-  <%= link_to "Delete", @blog, method: :delete, style: "color: red;" %>
+  <%= button_to "Delete", @blog, method: :delete, style: "color: red;" %>
   <%= link_to "Edit", edit_blog_path(@blog) %>
 </div>
 
