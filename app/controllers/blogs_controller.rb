@@ -5,12 +5,12 @@ class BlogsController < ApplicationController
     ActiveStorage::Current.url_options = { protocol: request.protocol, host: request.host, port: request.port }
   end
 
-  # GET /blogs or /blogs.json
+  # GET /blogs
   def index
     @blogs = Blog.order(created_at: :desc).page params[:page]
   end
 
-  # GET /blogs/1 or /blogs/1.json
+  # GET /blogs/:title
   def show
     @blog = Blog.friendly.find(params[:id])
   end
@@ -20,11 +20,11 @@ class BlogsController < ApplicationController
     @blog = Blog.new
   end
 
-  # GET /blogs/1/edit
+  # GET /blogs/:title/edit
   def edit
   end
 
-  # POST /blogs or /blogs.json
+  # POST /blogs
   def create
     @blog = Blog.new(blog_params)
 
@@ -39,7 +39,7 @@ class BlogsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /blogs/1 or /blogs/1.json
+  # PATCH/PUT /blogs/:title or /blogs/:title.json
   def update
     respond_to do |format|
       if @blog.update(blog_params)
@@ -52,7 +52,7 @@ class BlogsController < ApplicationController
     end
   end
 
-  # DELETE /blogs/1 or /blogs/1.json
+  # DELETE /blogs/:title or /blogs/:title.json
   def destroy
     @blog.destroy
 
