@@ -25,6 +25,18 @@
     float: right;
 }
 
+.blog-actions button {
+    color: red;
+    text-decoration: none;
+    font-size: 2rem;
+    padding: 2rem;
+    float: right;
+    font-family: 'Roboto-Regular';
+    background: no-repeat;
+    border: none;
+    cursor: pointer;
+}
+
 /* ==== Blog Cards ==== */
 
 .blog-card-container {
