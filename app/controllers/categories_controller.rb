@@ -1,25 +1,31 @@
 class CategoriesController < ApplicationController
   before_action :set_category, only: %i[ show edit update destroy ]
+  # Needed for image URLs to be accessible
+  before_action do
+    ActiveStorage::Current.url_options = { protocol: request.protocol, host: request.host, port: request.port }
+  end
 
-  # GET /categories or /categories.json
+  # GET /blog/category
   def index
     @categories = Category.all
   end
 
-  # GET /categories/1 or /categories/1.json
+  # GET /blogs/category/:name
   def show
+    blogs = Category.find(params[:id]).blogs
+    @blogs = blogs.order(created_at: :desc).page params[:page]
   end
 
-  # GET /categories/new
+  # GET /blogs/category/new
   def new
     @category = Category.new
   end
 
-  # GET /categories/1/edit
+  # GET /blogs/category/:name/edit
   def edit
   end
 
-  # POST /categories or /categories.json
+  # POST /blogs/category
   def create
     @category = Category.new(category_params)
 
