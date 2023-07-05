@@ -1,0 +1,232 @@
+@font-face {
+    font-family: 'icomoon';
+    src:  url('icomoon.eot?160j38');
+    src:  url('icomoon.eot?160j38#iefix') format('embedded-opentype'),
+    url('icomoon.ttf?160j38') format('truetype'),
+    url('icomoon.woff?160j38') format('woff'),
+    url('icomoon.svg?160j38#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'icomoon' !important;
+    speak: never;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-science:before {
+    content: "\e91a";
+}
+.icon-gitlab:before {
+    content: "\e920";
+}
+.icon-linux:before {
+    content: "\e910";
+}
+.icon-medium:before {
+    content: "\e925";
+}
+.icon-docker:before {
+    content: "\e900";
+    color: #1488c6;
+}
+.icon-arduino:before {
+    content: "\e91c";
+    color: #00979d;
+}
+.icon-rails:before {
+    content: "\e91d";
+    color: #c00;
+}
+.icon-amazonaws:before {
+    content: "\e911";
+}
+.icon-angular:before {
+    content: "\e912";
+    color: #dd0031;
+}
+.icon-node-dot-js:before {
+    content: "\e913";
+    color: #393;
+}
+.icon-vue-dot-js:before {
+    content: "\e914";
+    color: #4fc08d;
+}
+.icon-dot-net:before {
+    content: "\e915";
+    color: #5c2d91;
+}
+.icon-tensorflow:before {
+    content: "\e916";
+    color: #ff6f00;
+}
+.icon-r:before {
+    content: "\e906";
+    color: #276dc3;
+}
+.icon-mathworks:before {
+    content: "\e907";
+    color: #0076a8;
+}
+.icon-go:before {
+    content: "\e908";
+    color: #00add8;
+}
+.icon-spring:before {
+    content: "\e917";
+    color: #6db33f;
+}
+.icon-react:before {
+    content: "\e918";
+    color: #61dafb;
+}
+.icon-flask:before {
+    content: "\e919";
+}
+.icon-rust:before {
+    content: "\e909";
+}
+.icon-kotlin:before {
+    content: "\e90a";
+    color: #0095d5;
+}
+.icon-swift:before {
+    content: "\e90b";
+    color: #fa7343;
+}
+.icon-css3:before {
+    content: "\e90c";
+    color: #1572b6;
+}
+.icon-typescript:before {
+    content: "\e90d";
+    color: #007acc;
+}
+.icon-php:before {
+    content: "\e90e";
+    color: #777bb4;
+}
+.icon-csharp:before {
+    content: "\e90f";
+    color: #239120;
+}
+.icon-rails1:before {
+    content: "\e91e";
+    color: #c00;
+}
+.icon-ruby:before {
+    content: "\e901";
+    color: #cc342d;
+}
+.icon-cplusplus:before {
+    content: "\e902";
+    color: #00599c;
+}
+.icon-javascript:before {
+    content: "\e903";
+    color: #f7df1e;
+}
+.icon-java:before {
+    content: "\e904";
+    color: #007396;
+}
+.icon-python:before {
+    content: "\e905";
+    color: #3776ab;
+}
+.icon-envelop:before {
+    content: "\e945";
+}
+.icon-location2:before {
+    content: "\e948";
+}
+.icon-calendar:before {
+    content: "\e953";
+}
+.icon-bubbles2:before {
+    content: "\e96d";
+}
+.icon-stats-dots:before {
+    content: "\e99b";
+}
+.icon-lab:before {
+    content: "\e9aa";
+}
+.icon-power:before {
+    content: "\e9b5";
+}
+.icon-download3:before {
+    content: "\e9c7";
+}
+.icon-cross:before {
+    content: "\ea0f";
+}
+.icon-checkmark:before {
+    content: "\ea10";
+}
+.icon-backward2:before {
+    content: "\ea1f";
+}
+.icon-forward3:before {
+    content: "\ea20";
+}
+.icon-previous2:before {
+    content: "\ea23";
+}
+.icon-next2:before {
+    content: "\ea24";
+}
+.icon-arrow-up:before {
+    content: "\ea32";
+}
+.icon-arrow-right:before {
+    content: "\ea34";
+}
+.icon-arrow-down:before {
+    content: "\ea36";
+}
+.icon-arrow-left:before {
+    content: "\ea38";
+}
+.icon-embed2:before {
+    content: "\ea80";
+}
+.icon-twitter:before {
+    content: "\ea96";
+}
+.icon-youtube2:before {
+    content: "\ea9e";
+}
+.icon-vimeo2:before {
+    content: "\eaa1";
+}
+.icon-github:before {
+    content: "\eab0";
+}
+.icon-wordpress:before {
+    content: "\eab4";
+}
+.icon-linkedin:before {
+    content: "\eac9";
+}
+.icon-stackoverflow:before {
+    content: "\ead0";
+}
+.icon-html-five:before {
+    content: "\eae4";
+}
+.icon-git:before {
+    content: "\eae7";
+}
