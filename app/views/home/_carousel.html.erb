@@ -1,0 +1,39 @@
+<div>
+  <div class="slideshow-container">
+    <div class="slideshow-inner">
+      <div class="mySlides">
+        <div class="mySlides-inner">
+          <img src='<%= image_url('icon-th.jpeg') %>' alt="Thomas Harper"/>
+          <div class="text">
+            <span>Thomas Harper</span> - "I believe Steven really cares about the work that he does,
+            and the people around him. He is a force for good in the world, with strong principles
+            and ethics that guide him."
+          </div>
+        </div>
+      </div>
+
+      <div class="mySlides">
+        <div class="mySlides-inner">
+          <img src='<%= image_url('icon-ab.jpeg') %>' alt="Angelica Beristain"/>
+          <div class="text">
+            <span>Angelica Beristain</span> - "His passion for technology and openmindedness make
+            him an ideal teammate, who is always learning and willing to help others. "
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="slide-dots-container">
+      <span class="dot" onclick="currentSlide(0)"></span>
+      <span class="dot" onclick="currentSlide(1)"></span>
+    </div>
+  </div>
+
+  <% # Only load the carousel script once to avoid unexpected behaviour %>
+  <%= javascript_include_tag 'home/carousel.js', "data-turbo-eval": "false" %>
+
+  <% # Init slideshow %>
+  <script>
+      showSlides()
+  </script>
+</div>
