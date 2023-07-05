@@ -1,12 +1,256 @@
-<div class="page-container">
-  <h2>Welcome!</h2>
+<%= render 'shared/banner', title: "Welcome", cover_img: image_url("banner_img_2.jpeg") %>
+<%= javascript_include_tag('shared/page_transitions.js') %>
+<%= javascript_include_tag('shared/animations.js') %>
+<div>
+  <%#= render 'home/pc-animation' %>
 
-  <div class="text-block">
-    A dedicated Full-Stack Engineer, <a href="https://makers.tech/">Makers Academy</a> alumnus,
-    and university graduate with a BA in Digital Arts and Technology.
-    The ever-evolving world of technology has always exhilarated me, and I still stand in awe at the
-    possibilities it offers to make a positive impact on the world.
-    In order to develop my potential and foster my creativity, I seek collaborative environments
-    where my core values and enthusiasm can be shared.
+  <div class="home">
+    <div>
+      <div class="home-block-section">
+        <div class="testimonials-container">
+          <p id="tag-line" class="lead-tag-line">
+            "Dedicated Full-Stack Engineer with over 2 years of industry experience, Makers Academy alumnus,
+            and university graduate holding a BA in Digital Arts and Technology."
+          </p>
+          <div class="testimonials">
+            <%= render 'home/carousel' %>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <% #============================================== Languages =================================================== %>
+
+    <div>
+      <div class="home-block-section fade-in">
+        <h3 style="text-align: center">
+          Languages
+        </h3>
+
+        <div class="icons-container">
+          <div class="icon-title">
+            <h3>
+              Proficient In
+            </h3>
+          </div>
+
+          <div class="icons-block">
+            <div class="icon-container">
+              <div class="icon">
+                <%= svg('/dev-icons/ruby.svg') %>
+              </div>
+              <span>Ruby</span>
+            </div>
+
+            <div class="icon-container">
+              <div class="icon">
+                <%= svg('/dev-icons/javascript.svg') %>
+              </div>
+              <span>JavaScript</span>
+            </div>
+          </div>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc massa urna, imperdiet at faucibus at,
+            elementum id augue. Maecenas in diam quis orci pretium consectetur sit amet a ligula. Pellentesque
+            tincidunt ligula sit amet ipsum convallis tristique. Morbi tortor nunc, congue ut dictum ac,
+            molestie ac urna. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc massa urna, imperdiet at
+            faucibus at,
+          </p>
+        </div>
+
+        <div class="icons-container">
+          <div class="icon-title">
+            <h3>
+              Familiar With
+            </h3>
+          </div>
+
+          <div class="icons-block">
+            <div class="icon-container">
+              <div class="icon">
+                <%= svg('/dev-icons/python.svg') %>
+              </div>
+              <span>Python</span>
+            </div>
+
+            <div class="icon-container">
+              <div class="icon">
+                <%= svg('/dev-icons/java.svg') %>
+              </div>
+              <span>Java</span>
+            </div>
+
+            <div class="icon-container">
+              <div class="icon">
+                <%= svg('/dev-icons/c-plusplus.svg') %>
+              </div>
+              <span>C++</span>
+            </div>
+          </div>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc massa urna, imperdiet at faucibus at,
+            elementum id augue. Maecenas in diam quis orci pretium consectetur sit amet a ligula. Pellentesque
+            tincidunt ligula sit amet ipsum convallis tristique. Morbi tortor nunc, congue ut dictum ac,
+            molestie ac urna. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc massa urna, imperdiet at
+            faucibus at.
+          </p>
+        </div>
+      </div>
+    </div>
+
+
+    <% #========================================= Frameworks/Libraries ============================================= %>
+
+    <div>
+      <div class="home-block-section fade-in">
+        <h3 style="text-align: center">
+          Technologies
+        </h3>
+
+        <div class="icons-container">
+          <div class="icon-title">
+            <h3>
+              Proficient In
+            </h3>
+          </div>
+
+          <div class="icons-block">
+            <div class="icon-container">
+              <div class="icon">
+                <%= svg('/dev-icons/ruby-on-rails.svg') %>
+              </div>
+              <span>Rails</span>
+            </div>
+          </div>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc massa urna, imperdiet at faucibus at,
+            elementum id augue. Maecenas in diam quis orci pretium consectetur sit amet a ligula. Pellentesque
+            tincidunt ligula sit amet ipsum convallis tristique. Morbi tortor nunc, congue ut dictum ac,
+            molestie ac urna. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc massa urna, imperdiet at
+            faucibus at.
+          </p>
+        </div>
+
+        <div class="icons-container">
+          <div class="icon-title">
+            <h3>
+              Familiar With
+            </h3>
+          </div>
+
+          <div class="icons-block">
+
+            <div class="icon-container">
+              <div class="icon">
+                <%= svg('/dev-icons/spring.svg') %>
+              </div>
+              <span>Spring MVC</span>
+            </div>
+
+            <div class="icon-container">
+              <div class="icon">
+                <%= svg('/dev-icons/flask.svg') %>
+              </div>
+              <span>Flask</span>
+            </div>
+
+            <div class="icon-container">
+              <div class="icon">
+                <%= svg('/dev-icons/react.svg') %>
+              </div>
+              <span>React</span>
+            </div>
+
+            <div class="icon-container">
+              <div class="icon">
+                <%= svg('/dev-icons/docker.svg') %>
+              </div>
+              <span>Docker</span>
+            </div>
+
+            <div class="icon-container">
+              <div class="icon">
+                <%= svg('/dev-icons/nodejs.svg') %>
+              </div>
+              <span>NodeJS</span>
+            </div>
+          </div>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc massa urna, imperdiet at faucibus at,
+            elementum id augue. Maecenas in diam quis orci pretium consectetur sit amet a ligula. Pellentesque
+            tincidunt ligula sit amet ipsum convallis tristique. Morbi tortor nunc, congue ut dictum ac,
+            molestie ac urna. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc massa urna, imperdiet at
+            faucibus at.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <% #============================================== Experience ================================================== %>
+
+    <div class="home-block-section fade-in">
+      <h3 style="text-align: center">Experience</h3>
+      <div class="organizations-block">
+        <a href="https://www.amphora-research.com/">
+          <%= image_tag('amphora-logo.png') %>
+        </a>
+        <h3>Software Engineer - 02/2021 - 05/2023</h3>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc massa urna, imperdiet at faucibus at,
+          elementum id augue. Maecenas in diam quis orci pretium consectetur sit amet a ligula. Pellentesque
+          tincidunt ligula sit amet ipsum convallis tristique. Morbi tortor nunc, congue ut dictum ac,
+          molestie ac urna.
+        </p>
+      </div>
+    </div>
+
+
+    <% #=========================================== Areas Of Interest ============================================== %>
+
+    <div class="home-block-section fade-in" style="overflow: visible">
+      <h3 style="text-align: center">My Areas Of Interest</h3>
+      <div class="areas-of-interest-container">
+        <div>
+          <h3>Software Engineering</h3>
+          <%= svg("graphic-01-coding.svg") %>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc massa urna, imperdiet at faucibus at,
+            elementum id augue. Maecenas in diam quis orci pretium consectetur sit amet a ligula. Pellentesque
+            tincidunt ligula sit amet ipsum convallis tristique. Morbi tortor nunc, congue ut dictum ac,
+            molestie ac urna.
+          </p>
+        </div>
+        <div>
+          <h3>CAD & CAM</h3>
+          <%= svg("graphic-02-3d.svg") %>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc massa urna, imperdiet at faucibus at,
+            elementum id augue. Maecenas in diam quis orci pretium consectetur sit amet a ligula. Pellentesque
+            tincidunt ligula sit amet ipsum convallis tristique. Morbi tortor nunc, congue ut dictum ac,
+            molestie ac urna.
+          </p>
+        </div>
+        <div>
+          <h3>Electrical Engineering</h3>
+          <%= svg("graphic-03-electric.svg") %>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc massa urna, imperdiet at faucibus at,
+            elementum id augue. Maecenas in diam quis orci pretium consectetur sit amet a ligula. Pellentesque
+            tincidunt ligula sit amet ipsum convallis tristique. Morbi tortor nunc, congue ut dictum ac,
+            molestie ac urna.
+          </p>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
+
+<script>
+    // Setup listeners for scroll event fade ins.
+    addScrollListeners()
+</script>
+
+
+
+
+
