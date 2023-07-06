@@ -25,6 +25,8 @@
 
 }
 
+/* ===== Rows ===== */
+
 .about-row {
     position: relative;
     width: 100%;
@@ -56,6 +58,8 @@
 .about-row:nth-child(even) p {
     float: left;
 }
+
+/* ==== Media Queries ==== */
 
 @media screen and (max-width: 1000px) {
     .about-row p {
