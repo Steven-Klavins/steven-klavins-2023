@@ -8,6 +8,7 @@
 }
 
 .slideshow-container img {
+    position: relative;
     height: 15rem;
     width: 15rem;
     border-radius: 50%;
@@ -40,9 +41,14 @@
     padding-right: 2rem;
 }
 
+.mySlides div {
+    margin-top: 1rem;
+}
+
 .mySlides .text span {
     font-weight: bold;
     font-style: normal;
+    padding-bottom: 2rem;
 }
 
 .slide-dots-container {
