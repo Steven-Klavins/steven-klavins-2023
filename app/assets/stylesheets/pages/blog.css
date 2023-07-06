@@ -126,6 +126,7 @@
     padding: 1rem;
     margin-left: 1rem;
     background-color: #3737370d;
+    height: 151.7rem;
 }
 
 .blog-categories-box li {
@@ -190,7 +191,7 @@
 
 @media screen and (max-width: 600px) {
     .blog-card:hover {
-        background-size: 160% auto;
+        background-size: 140rem auto;
     }
 }
 

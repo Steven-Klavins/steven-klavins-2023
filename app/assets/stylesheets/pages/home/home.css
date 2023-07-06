@@ -1,0 +1,314 @@
+/* ==== HOME ==== */
+
+.home h3 {
+    margin: 4rem auto auto;
+    width: 80%;
+    max-width: 120rem;
+}
+
+.lead-tag-line {
+    position: relative;
+    text-align: center;
+    font-family: Roboto-Regular;
+    font-size: 3rem;
+    width: 80%;
+    max-width: 120rem;
+    margin: 0 auto 5rem;
+    right: 10%;
+    opacity: 0;
+    -webkit-animation: slide-right 1s forwards;
+    -webkit-animation-delay: .2s;
+    animation: slide-right 1s forwards;
+    animation-delay: .2s;
+}
+
+.home-block-section {
+    position: relative;
+    padding-bottom: 10rem;
+    border-bottom: solid 0.1rem rgba(242, 242, 242, 1);
+    width: 80%;
+    max-width: 120rem;
+    margin: 4rem auto 0;
+    overflow: hidden;
+}
+
+.home-text-block {
+    margin: 2rem auto auto auto;
+    max-width: 96rem;
+    padding-left: 2rem;
+    font-size: 1.8rem;
+    font-family: "Roboto-Regular";
+}
+
+/* ==== Testimonials ==== */
+
+.testimonials-container {
+    width: 100%;
+    overflow-x: hidden;
+    position: relative;
+}
+
+.testimonials {
+    height: min-content;
+    position: relative;
+    left: 10%;
+    width: 100%;
+    opacity: 0;
+    -webkit-animation: slide-left 1s forwards;
+    -webkit-animation-delay: .2s;
+    animation: slide-left 1s forwards;
+    animation-delay: .2s;
+}
+
+/* ==== Transitions ==== */
+
+@-webkit-keyframes slide-left {
+    100% {
+        left: 0;
+        opacity: 1;
+    }
+}
+
+@keyframes slide-left {
+    100% {
+        left: 0;
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes slide-right {
+    100% {
+        right: 0;
+        opacity: 1;
+    }
+}
+
+@keyframes slide-right {
+    100% {
+        right: 0;
+        opacity: 1;
+    }
+}
+
+/* ==== Technologies ==== */
+
+.home-tech-container {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+    text-align: center;
+    margin: auto;
+    justify-content: left;
+    width: 96rem;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+/* ==== Tech Icons ==== */
+
+.icons-container {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+    text-align: center;
+    margin: auto;
+    justify-content: center;
+    width: 50%;
+    max-width: 100%;
+    float: left;
+}
+
+.icons-container p {
+    width: 100%;
+    max-width: 50rem;
+    margin-right: 2rem;
+    margin-left: 1rem;
+    text-align: left;
+    font-size: 1.5rem;
+    font-family: Roboto-Regular;
+    padding-top: 1rem;
+}
+
+.icons-block {
+    width: 100%;
+    display: flex;
+    flex-wrap: inherit;
+    max-width: 50rem;
+}
+
+.icon-container {
+    height: 12rem;
+    margin-right: 2rem;
+}
+
+.icon-container span {
+    font-family: Roboto-Regular;
+    font-size: 14px;
+    color: #2a2a2a;
+}
+
+.icon-container svg {
+    height: 90%;
+    width: 100%;
+    fill: white;
+    padding: 1rem;
+}
+
+.icon-container .icon {
+    width: 8rem;
+    height: 8rem;
+    position: relative;
+    justify-content: center;
+    margin: 1rem 0rem 0.6rem;
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    background-color: #2a2a2a;
+    border-radius: 50%;
+    -webkit-box-shadow: inset 0px 0px 0px 4px #ffffff;
+    -moz-box-shadow: inset 0px 0px 0px 4px #ffffff;
+    box-shadow: inset 0px 0px 0px 4px #ffffff;
+    border: 1px solid #2a2a2a;
+}
+
+.icon-title {
+    position: relative;
+    width: 100%;
+    max-width: 50rem;
+    margin-left: 1rem;
+    margin-right: 2rem;
+}
+
+.icon-title h3 {
+    width: 100%;
+    text-align: left;
+    font-size: 3rem;
+}
+
+/* ==== Experience ==== */
+
+.organizations-block {
+    width: 80%;
+    max-width: 160rem;
+    margin: 2rem auto 0rem;
+    text-align: center;
+    padding-top: 2rem;
+}
+
+.organizations-block p {
+    width: 100%;
+    margin: 0 auto;
+    max-width: 100rem;
+    font-size: 1.5rem;
+    font-family: Roboto-Regular;
+    padding-top: 2rem;
+}
+
+.organizations-block h3 {
+    font-size: 2rem;
+    margin: 0rem auto auto;
+}
+
+.organizations-block img {
+    max-height: 10rem;
+    max-width: 100%;
+    margin-bottom: 1rem;
+}
+
+/* ==== Areas Of interest ==== */
+
+.areas-of-interest-container {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    margin: 0rem auto 0rem;
+    max-width: 160rem;
+    width: 80%;
+}
+
+.areas-of-interest-container div {
+    height: 50rem;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin: 4rem 4rem 25rem;
+    min-width: calc(100% / 3);
+}
+
+.areas-of-interest-container h3 {
+    margin-bottom: 0;
+    position: absolute;
+    font-size: 3rem;
+    width: 110%;
+    top: -4rem;
+}
+
+.areas-of-interest-container p {
+    position: absolute;
+    top: 40rem;
+    font-size: 1.5rem;
+    font-family: 'Roboto-Regular';
+}
+
+
+.areas-of-interest-container svg {
+    width: 25rem;
+    fill: #2a2a2a;
+    justify-content: center;
+    height: 80%;
+}
+
+/* ==== Media Queries ==== */
+
+@media screen and (max-width: 1360px) {
+
+    .icons-container {
+        float: none;
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    .icons-container p {
+        margin: 0 auto;
+    }
+
+    .icon-title {
+        margin: 0 auto;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .areas-of-interest-container {
+        display: block;
+    }
+
+    .areas-of-interest-container div {
+        margin: 4rem 4rem 15rem;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .home-tech-container {
+        margin: 0 auto;
+    }
+
+    .testimonials-container {
+        min-height: 45rem;
+    }
+
+
+}
+
+@media screen and (max-width: 600px) {
+    .home-block-section {
+        border-bottom: solid 0.2rem rgba(242, 242, 242, 1);
+        width: 100%
+    }
+
+    .icon-container {
+        margin-right: 1.98rem;
+    }
+
+}

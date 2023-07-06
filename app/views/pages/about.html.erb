@@ -1,3 +1,71 @@
-<div class="page-container">
-  <h2>About</h2>
+<%= render 'shared/banner', title: "About", cover_img: image_url("banner_img_2.jpeg") %>
+<%= javascript_include_tag('shared/page_transitions.js') %>
+<div class="about">
+  <div class="about-row">
+    <h3>Background</h3>
+    <div class="about-img-container">
+      <%= image_tag("about-photo-1.jpg") %>
+    </div>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc massa urna, imperdiet at faucibus at,
+      elementum id augue. Maecenas in diam quis orci pretium consectetur sit amet a ligula. Pellentesque
+      tincidunt ligula sit amet ipsum convallis tristique. Morbi tortor nunc, congue ut dictum ac,
+      molestie ac urna. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc massa urna, imperdiet at
+      faucibus at.
+      <br>
+      <br>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc massa urna, imperdiet at faucibus at,
+      elementum id augue. Maecenas in diam quis orci pretium consectetur sit amet a ligula. Pellentesque
+      tincidunt ligula sit amet ipsum convallis tristique. Morbi tortor nunc, congue ut dictum ac,
+      molestie ac urna. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc massa urna, imperdiet at
+      faucibus at.
+    </p>
+  </div>
+
+  <div class="about-row fade-in">
+    <h3>Education</h3>
+    <div class="about-img-container">
+      <%= image_tag("makers-hackathon.jpg") %>
+    </div>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc massa urna, imperdiet at faucibus at,
+      elementum id augue. Maecenas in diam quis orci pretium consectetur sit amet a ligula. Pellentesque
+      tincidunt ligula sit amet ipsum convallis tristique. Morbi tortor nunc, congue ut dictum ac,
+      molestie ac urna. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc massa urna, imperdiet at
+      faucibus at.
+      <br>
+      <br>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc massa urna, imperdiet at faucibus at,
+      elementum id augue. Maecenas in diam quis orci pretium consectetur sit amet a ligula. Pellentesque
+      tincidunt ligula sit amet ipsum convallis tristique. Morbi tortor nunc, congue ut dictum ac,
+      molestie ac urna. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc massa urna, imperdiet at
+      faucibus at.
+    </p>
+  </div>
+
+  <div class="about-row fade-in">
+    <h3>Hobbies</h3>
+    <div class="about-img-container">
+      <%= image_tag("about-photo-2.jpg") %>
+    </div>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc massa urna, imperdiet at faucibus at,
+      elementum id augue. Maecenas in diam quis orci pretium consectetur sit amet a ligula. Pellentesque
+      tincidunt ligula sit amet ipsum convallis tristique. Morbi tortor nunc, congue ut dictum ac,
+      molestie ac urna. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc massa urna, imperdiet at
+      faucibus at.
+      <br>
+      <br>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc massa urna, imperdiet at faucibus at,
+      elementum id augue. Maecenas in diam quis orci pretium consectetur sit amet a ligula. Pellentesque
+      tincidunt ligula sit amet ipsum convallis tristique. Morbi tortor nunc, congue ut dictum ac,
+      molestie ac urna. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc massa urna, imperdiet at
+      faucibus at.
+    </p>
+  </div>
 </div>
+
+<script>
+    // Setup listeners for scroll event fade ins.
+    addScrollListeners()
+</script>

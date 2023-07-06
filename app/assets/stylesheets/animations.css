@@ -1,0 +1,152 @@
+/*========================
+  _electronics-animation
+=========================*/
+
+.electronics-animation-container {
+    position: absolute;
+    height: 30rem;
+    width: 50rem;
+    background-repeat: no-repeat;
+    left: 0;
+    right: 0;
+    text-align: center;
+    opacity: 8%;
+    margin: 2rem auto 0;
+
+}
+
+.voltage-container {
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+.voltage {
+    font-size: 2rem;
+    position: absolute;
+    transition: --percent 40s;
+    --temp: calc(var(--percent) * 30);
+    --v1: max(var(--temp) - 0.5, 0);
+    --v2: max((var(--temp) - var(--v1)) * 30 - 0.5, 0);
+    counter-reset: v1 var(--v1) v2 var(--v2);
+    top: 1.6rem;
+    left: 4.5rem;
+    font-family: 'Roboto-Regular';
+}
+
+.voltage::before {
+    content: counter(v1) "." counter(v2, decimal-leading-zero);
+}
+
+/*========================
+      _pc-animation
+=========================*/
+
+.pc-animation-inner-container {
+    position: absolute;
+    height: 87.5rem;
+    width: 40rem;
+    right: 0%;
+    opacity: 8%;
+    background-repeat: no-repeat;
+    margin-top: 8rem;
+}
+
+.pc-animation-outer-container {
+    width: 70%;
+    position: relative;
+    margin: 0 auto;
+    max-width: 120rem;
+}
+
+.fan-container {
+    position: absolute;
+    top: 20rem;
+    width: 100%;
+    margin-left: 15.5%;
+}
+
+.fan-container svg {
+    -webkit-animation: spin 2s linear infinite;
+    -moz-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+    width: 6.2rem;
+    height: 6.2rem;
+    margin-right: 3%;
+}
+
+@-moz-keyframes spin {
+    100% {
+        -moz-transform: rotate(360deg);
+    }
+}
+
+@-webkit-keyframes spin {
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@keyframes spin {
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@media screen and (max-width: 1110px) {
+    .pc-animation-inner-container {
+
+        margin-top: 11.5rem;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .pc-animation-inner-container {
+        margin-top: 15.5rem;
+    }
+}
+
+/*========================
+      _imac-animation
+==========================*/
+
+.imac-animation-container {
+    position: absolute;
+    height: 87.5rem;
+    width: 80rem;
+    max-width: 80%;
+    background-repeat: no-repeat;
+    top: calc(87.5rem + 50%);
+    margin: 0 auto;
+    text-align: center;
+    left: calc(50% - 40rem);
+    opacity: 3%;
+}
+
+.imac-animation-container code {
+    color: black;
+    display: block;
+    height: 40vw;
+    font-size: 2rem;
+    text-align: left;
+    width: 100%;
+    overflow: hidden;
+}
+
+.cursor-blink {
+    animation: blinker 1s linear infinite;
+    font-weight: bolder;
+}
+
+@keyframes blinker {
+    50% {
+        opacity: 0;
+    }
+}
+
+@media screen and (max-width: 850px) {
+    .imac-animation-container {
+        display: none;
+    }
+}

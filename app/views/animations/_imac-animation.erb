@@ -1,0 +1,23 @@
+<div class="imac-animation-container" style="background-image: url('<%= image_url("svg/imac") %>');">
+  <div>
+    <pre>
+      <code>
+        &#35;include &lt;Servo.h&gt;
+
+        Servo myServo;
+        int val;
+
+        void setup(){
+          myServo.attach(9);
+        }
+
+        void loop() {
+          val = analogRead(1);
+          val = map(val, 0, 1023, 0, 180);
+          myServo.write(val);
+          delay(15);
+          }<span class="cursor-blink">|</span>
+      </code>
+    </pre>
+  </div>
+</div>
