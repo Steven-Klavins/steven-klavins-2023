@@ -62,6 +62,7 @@ group :development, :test do
   gem "debug"
   gem "byebug"
   gem 'rspec-rails'
+  gem "letter_opener"
 end
 
 group :development do
@@ -81,3 +82,5 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
+
+gem "sidekiq", "~> 7.1"
