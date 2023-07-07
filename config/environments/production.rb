@@ -68,6 +68,16 @@ Rails.application.configure do
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
   # config.action_mailer.raise_delivery_errors = false
 
+  # Configure Gmail SMTP deliveries
+
+  ActionMailer::Base.smtp_settings = {
+    :address        => "smtp.gmail.com",
+    :port           => 587,
+    :user_name      => ENV["SMTP_EMAIL"],
+    :password       => ENV["SMTP_PASSWORD"],
+    :authentication => :plain
+  }
+
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
   # the I18n.default_locale when a translation cannot be found).
   config.i18n.fallbacks = true
@@ -93,4 +103,7 @@ Rails.application.configure do
 
   # Include SVGs.
   config.assets.precompile += %w( '.svg' )
+
+  # Sidekiq background jobs
+  config.active_job.queue_adapter = :sidekiq
 end
