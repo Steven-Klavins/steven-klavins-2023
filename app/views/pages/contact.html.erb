@@ -1,4 +1,5 @@
 <%= render 'shared/banner', title: "Contact", cover_img: image_url("banner_img_2.jpeg") %>
+<%= javascript_include_tag('contact/contact.js') %>
 <div class="contact">
   <div class="contact-methods">
     <h3>Fancy a chat?</h3>
@@ -19,60 +20,47 @@
         <a href="mailto: stevenklavins94@gmail.com">
           stevenklavins94@gmail.com
         </a>
-      </li>
-      <li>
-        <button id="copy-email">Copy address</button>
-        <span id="copy-event" class="copy-event">Copied to clipboard!</span>
+        <div class="copy-email-container">
+          <button id="copy-email"><span class="icon-files-empty"></span></button>
+          <span id="copy-description" class="copy-description">Copy</span>
+          <span id="copy-event" class="copy-event">Copied to clipboard!</span>
+        </div>
       </li>
     </ul>
   </div>
 
   <div class="contact-form">
-    <h3>Contact Form</h3>
-    <%= form_with scope: :contact_form, url: contact_path, method: :post, local: true do |form| %>
+    <div class="form-title">
+      <h3>Contact Form</h3>
+      <span style="display: inline-block">Please complete all fields *</span>
+    </div>
+
+    <%= form_with scope: :contact_form, url: contact_form_index_path, method: :post, local: true do |form| %>
       <div class="form-group">
-        <%= form.text_field :name, placeholder: "Name", class: "form-control" %>
+        <%= form.text_field :name, placeholder: "Name", class: "form-control", required: true %>
       </div>
       <div class="form-group">
-        <%= form.text_field :subject, placeholder: "Subject", class: "form-control" %>
+        <%= form.text_field :subject, placeholder: "Subject", class: "form-control", required: true %>
       </div>
       <div class="form-group">
-        <%= form.email_field :email, placeholder: "Email", class: "form-control" %>
+        <%= form.email_field :email, placeholder: "Email", class: "form-control", id: "contact-email",
+                             onfocus: "resetColor(this)", onblur: "fieldIsValidColor(this)", required: true %>
       </div>
       <div class="form-group">
-        <%= form.text_area :message, class: "form-control" %>
+        <%= form.text_area :message, class: "form-control", required: true %>
       </div>
-      <%= form.submit "Send", class: "btn btn-primary" %>
+      <%= form.submit "Send", class: "btn btn-primary", id: "submit-contact-form" %>
     <% end %>
   </div>
 </div>
 
 <script>
-    const Clipboard = () => {
-        const copyText = async (text) => {
-            try {
-                await navigator.clipboard.writeText(text);
-                flashCopyEvent()
-
-            } catch (error) {
-                alert(`Failed to copy text to clipboard: ${error.message}`);
-            }
-        };
-        return {
-            copyText
-        };
-    };
-
+    // Add email copy event listener.
     document.querySelector('#copy-email').addEventListener('click', () => {
         const clipboard = Clipboard();
         clipboard.copyText("stevenklavins94@gmail.com");
     });
 
-    function flashCopyEvent() {
-        let notice = document.getElementById("copy-event")
-        notice.classList.add("active")
-        setTimeout(function () {
-            notice.classList.remove("active")
-        }, 1500)
-    }
+    // Add form validation listeners.
+    addContactFormValidationListeners()
 </script>

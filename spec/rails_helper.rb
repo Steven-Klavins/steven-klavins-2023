@@ -5,6 +5,31 @@ require_relative '../config/environment'
 # Prevent database truncation if the environment is production
 abort("The Rails environment is running in production mode!") if Rails.env.production?
 require 'rspec/rails'
+
+# Configure drivers to run feature tests headless
+
+driver = :selenium_chrome_headless
+Capybara.server = :puma, {Silent: true}
+
+Capybara.register_driver driver do |app|
+  options = ::Selenium::WebDriver::Chrome::Options.new
+
+  options.add_argument("--headless")
+  options.add_argument("--no-sandbox")
+  options.add_argument("--disable-dev-shm-usage")
+  options.add_argument("--window-size=1400,1400")
+
+  Capybara::Selenium::Driver.new(app, browser: :chrome, options: options)
+end
+
+Capybara.javascript_driver = driver
+
+RSpec.configure do |config|
+  config.before(:each, type: :system) do
+    driven_by driver
+  end
+end
+
 # Add additional requires below this line. Rails is not loaded until this point!
 
 # Requires supporting ruby files with custom matchers and macros, etc, in

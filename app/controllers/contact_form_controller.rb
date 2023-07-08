@@ -1,10 +1,13 @@
 class ContactFormController < ApplicationController
   def create
-    @name = params[:contact_form][:name]
-    @subject = params[:contact_form][:subject]
-    @email = params[:contact_form][:email]
-    @message = params[:contact_form][:message]
+    ContactFormMailer.new_contact_form(contact_form_params).deliver_later
+    redirect_to thanks_path
+  end
 
-    redirect_to :root
+  private
+
+  def contact_form_params
+    params.require(:contact_form).permit(:name, :subject, :email, :message)
   end
 end
+
