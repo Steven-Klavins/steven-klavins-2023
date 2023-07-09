@@ -13,6 +13,11 @@ require 'rails_helper'
 # sticking to rails and rspec-rails APIs to keep things simple and stable.
 
 RSpec.describe "/blogs", type: :request do
+
+  before(:each) do
+    @user = User.create!(email: "test@testing.net", password: "123456")
+    sign_in(@user)
+  end
   
   # This should return the minimal set of attributes required to create a valid
   # Blog. As you add validations to Blog, be sure to
