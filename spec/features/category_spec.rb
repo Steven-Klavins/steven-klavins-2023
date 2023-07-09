@@ -21,6 +21,10 @@ RSpec.feature "Blog Creation", type: :feature do
     # blog_1 => ['Python']
     # blog_2 => ['Ruby']
     # blog_3 => ['Ruby', 'Java']
+    # Create and sign in the user with devise test helpers
+
+    @user = User.create!(email: "test@testing.net", password: "123456")
+    sign_in(@user)
   end
 
   context "Blogs should sort by specified categories" do
