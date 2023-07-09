@@ -3,6 +3,14 @@ require 'sidekiq/web'
 Rails.application.routes.draw do
   devise_for :users, :skip => [:sessions]
 
+  # Authentication for Sidekiq activity panel
+  devise_scope :user do
+    authenticated :user do
+      mount Sidekiq::Web => "/sidekiq"
+    end
+  end
+
+  # Sign in/ Sign out for devise sessions
   as :user do
     get "/admin" => "devise/sessions#new", :as => :new_user_session
     post "/admin" => "devise/sessions#create", :as => :user_session
@@ -20,11 +28,9 @@ Rails.application.routes.draw do
 
   resources :contact_form, only: %i[new create]
 
-  # Sidekiq
-  mount Sidekiq::Web => "/sidekiq"
-
   # Pages
   root to: 'pages#home'
+  
   get 'contact', to: 'pages#contact', as: 'contact'
   get 'about', to: 'pages#about', as: 'about'
   get 'thanks', to: 'pages#thanks', as: 'thanks'
