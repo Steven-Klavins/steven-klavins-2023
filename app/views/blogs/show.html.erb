@@ -1,15 +1,15 @@
 <% if @blog.cover_image.attached? %>
-  <%= render 'shared/banner', cover_img: @blog.cover_image.url, title: @blog.title, categories: @blog.categories  %>
+  <%= render 'shared/banner', cover_img: @blog.cover_image.url, title: @blog.title, categories: @blog.categories %>
 <% else %>
   <%= render 'shared/banner', title: @blog.title, categories: @blog.categories %>
 <% end %>
 
-<p class="notice" ><%= notice %></p>
-
-<div class="blog-actions">
-  <%= button_to "Delete", @blog, method: :delete, style: "color: red;" %>
-  <%= link_to "Edit", edit_blog_path(@blog) %>
-</div>
+<% if user_signed_in? %>
+  <div class="blog-actions">
+    <%= button_to "Delete", @blog, method: :delete, style: "color: red;" %>
+    <%= link_to "Edit", edit_blog_path(@blog) %>
+  </div>
+<% end %>
 
 <div class="trix-content trix-overrides">
   <%= @blog.body %>
