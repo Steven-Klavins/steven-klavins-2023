@@ -1,0 +1,45 @@
+.log-in {
+    width: 80%;
+    padding-top: 10rem;
+    margin: 0 auto 10rem;
+}
+
+.log-in a {
+    width: 30%;
+}
+
+.log-in form {
+    width: 30%;
+    margin: 0 auto;
+    min-width: 40rem;
+    color: #2a2a2a;
+    font-family: Roboto-Regular;
+}
+
+.log-in form input[type='email'], input[type='password'] {
+    width: 100%;
+    max-width: 120rem;
+    font-size: 2rem;
+    border: none;
+    border-bottom: 1px solid #2a2a2a;
+    margin: 1rem auto 2rem;
+    outline: none;
+}
+
+.log-in form input[type='submit'] {
+    width: 8rem;
+    font-size: 2rem;
+    height: 3rem;
+    background-color: #2a2a2a;
+    color: white;
+    cursor: pointer;
+    float: right;
+    border: none;
+}
+
+.login-shared-link {
+    width: 30%;
+    min-width: 40rem;
+    margin: 0 auto;
+    padding-top: 1rem;
+}
