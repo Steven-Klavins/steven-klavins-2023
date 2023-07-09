@@ -233,7 +233,7 @@
     position: relative;
     display: flex;
     justify-content: center;
-    margin: 4rem 4rem 25rem;
+    margin: 4rem 4rem 20rem;
     min-width: calc(100% / 3);
 }
 

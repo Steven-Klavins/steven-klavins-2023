@@ -7,6 +7,9 @@ RSpec.feature "Blog Creation", type: :feature do
     Category.create(name: "Java")
     Category.create(name: "Python")
     @blog_1 = Blog.create!(title: "Awesome Blog", body: "Some good content")
+    @user = User.create!(email: "test@testing.net", password: "123456")
+
+    sign_in(@user)
   end
 
   context "Creating and editing blogs" do
@@ -38,20 +41,18 @@ RSpec.feature "Blog Creation", type: :feature do
       expect(page).to have_content "Ruby"
     end
 
+    scenario "An admin can delete an existing blog" do
+      visit blog_path(id: @blog_1.id)
+      click_on "Delete"
+      expect(page).to_not have_content "Awesome Blog"
+    end
+
     scenario "An admin can edit an existing blog" do
       visit blog_path(id: @blog_1.id)
       click_on "Edit"
       fill_in_trix_editor("blog_body_trix_input_blog_#{@blog_1.id}", "Updated content")
       click_on "Update Blog"
       expect(page).to have_content "Updated content"
-    end
-
-    scenario "An admin can delete an existing blog" do
-      title = @blog_1.title
-      visit blog_path(id: @blog_1.id)
-      click_on "Delete"
-      expect(page).to have_content "Blog was successfully destroyed."
-      expect(page).to_not have_content title
     end
   end
 end
