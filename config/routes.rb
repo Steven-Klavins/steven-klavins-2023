@@ -1,6 +1,14 @@
 require 'sidekiq/web'
 
 Rails.application.routes.draw do
+  devise_for :users, :skip => [:sessions]
+
+  as :user do
+    get "/admin" => "devise/sessions#new", :as => :new_user_session
+    post "/admin" => "devise/sessions#create", :as => :user_session
+    delete "/logout" => "devise/sessions#destroy", :as => :destroy_user_session
+  end
+
   # Resources
   resources :categories, path: '/blogs/category' do
     get '/page/:page', action: :index, on: :collection
