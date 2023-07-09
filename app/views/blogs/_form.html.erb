@@ -21,9 +21,9 @@
           <%= form.file_field :cover_image %>
         </div>
 
-        <div >
+        <div class="category-selection">
           <%= form.label :categories, style: "display: block" %>
-          <%= form.select :category_ids, Category.pluck(:name, :id), {}, { multiple: true, data: { controller: "slim" } }%>
+          <%= form.select :category_ids, Category.pluck(:name, :id), {}, { multiple: true, data: { controller: "slim" } } %>
         </div>
 
         <%= form.rich_text_area :body %>
