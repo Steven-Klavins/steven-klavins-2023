@@ -1,5 +1,8 @@
 class CategoriesController < ApplicationController
+  # Authenticate user
+  before_action :authenticate_user!, except: [:index, :show]
   before_action :set_category, only: %i[ show edit update destroy ]
+
   # Needed for image URLs to be accessible
   before_action do
     ActiveStorage::Current.url_options = { protocol: request.protocol, host: request.host, port: request.port }
