@@ -151,6 +151,15 @@
     width: 100%;
 }
 
+.category-selection {
+    margin-bottom: 1rem;
+}
+
+.category-selection label{
+    margin-bottom: 1rem;
+    font-family: Roboto-Regular;
+}
+
 /* ==== Shared Overlays ==== */
 
 .blog-categories-overlay ul {
