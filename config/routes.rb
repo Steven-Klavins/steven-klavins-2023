@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   devise_scope :user do
     authenticated :user do
       mount Sidekiq::Web => "/sidekiq"
+      get '/admin-panel', to: 'pages#admin_panel'
     end
   end
 
