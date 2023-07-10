@@ -1,9 +1,11 @@
 <h1>New category</h1>
 
-<%= render "form", category: @category %>
+<div class="categories">
+  <div class="sk-form">
+    <%= render "form", category: @category %>
 
-<br>
-
-<div>
-  <%= link_to "Back to categories", categories_path %>
+    <div class="category-return-link">
+      <%= link_to "Back to admin", admin_panel_path %>
+    </div>
+  </div>
 </div>
