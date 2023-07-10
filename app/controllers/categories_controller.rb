@@ -8,11 +8,6 @@ class CategoriesController < ApplicationController
     ActiveStorage::Current.url_options = { protocol: request.protocol, host: request.host, port: request.port }
   end
 
-  # GET /blog/category
-  def index
-    @categories = Category.all
-  end
-
   # GET /blogs/category/:name
   def show
     blogs = Category.find(params[:id]).blogs
