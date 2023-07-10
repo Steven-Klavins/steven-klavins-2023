@@ -1,0 +1,18 @@
+.categories {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.categories a{
+    color: #2a2a2a;
+}
+
+.categories-container {
+    font-family: Roboto-Regular;
+    margin: 0 auto;
+    width: 50%;
+}
+
+.category-return-link {
+    font-size: 2rem;
+}
