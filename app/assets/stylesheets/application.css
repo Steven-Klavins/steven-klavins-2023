@@ -175,6 +175,10 @@ li {
     text-align: center;
 }
 
+.error {
+    text-align: center;
+}
+
 .error-notice {
     color: red;
     text-align: center;
