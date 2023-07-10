@@ -1,0 +1,17 @@
+<% # Create a resource identifier for Id's %>
+<% resource_id = "#{resource.class.name}-#{resource.id}" %>
+
+<div class="delete">
+  <a id="delete" onclick="confirmDeletion('<%= resource_id %>')">Delete</a>
+</div>
+
+<div id='<%= resource_id %>' style="display: none;">
+  <div class="confirmation-overlay" onclick="cancelDelete('<%= resource_id %>')"></div>
+  <div class="confirmation-dialog">
+      Are you sure you want to delete <%= resource_identifier %>?
+    <div class="confirmation-buttons">
+      <%= button_to "Delete", resource, method: :delete, style: "color: red;" %>
+      <button onclick="cancelDelete('<%= resource_id %>')" style="color: #2a2a2a">Cancel</button>
+    </div>
+  </div>
+</div>

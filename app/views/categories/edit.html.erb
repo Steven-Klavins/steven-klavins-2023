@@ -1,10 +1,10 @@
-<h1>Editing category</h1>
+<div class="categories">
+  <div class="sk-form">
+    <h1>Editing category</h1>
+    <%= render "form", category: @category %>
 
-<%= render "form", category: @category %>
-
-<br>
-
-<div>
-  <%= link_to "Show this category", @category %> |
-  <%= link_to "Back to categories", categories_path %>
+    <div class="category-return-link">
+      <%= link_to "Back to admin", admin_panel_path %>
+    </div>
+  </div>
 </div>
