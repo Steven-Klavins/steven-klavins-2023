@@ -111,6 +111,6 @@ Rails.application.configure do
   config.active_job.queue_adapter = :sidekiq
 
   # Set Default hosts
-  config.action_mailer.default_url_options = { host: ENV["HOST_NAME"] }
-  config.default_url_options = { host: ENV["HOST_NAME"] }
+  config.action_mailer.default_url_options = { host: ENV["HOSTNAME"] }
+  config.default_url_options = { host: ENV["HOSTNAME"] }
 end
