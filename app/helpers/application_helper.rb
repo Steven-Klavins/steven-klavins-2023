@@ -21,4 +21,11 @@ module ApplicationHelper
       image.html_safe
     end
   end
+
+  # Return my total years of experience.
+  def years_experience
+    start_date = DateTime.new(2021,2)
+    months = (Time.now.utc.to_date.year * 12 + Time.now.utc.to_date.month) - (start_date.year * 12 + start_date.month)
+    months / 12
+  end
 end
