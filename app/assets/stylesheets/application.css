@@ -164,6 +164,7 @@ li {
 .title svg {
     display: inline-block;
     max-height: 60px;
+    max-width: 103px;
 }
 
 /* ==== Notices ==== */
