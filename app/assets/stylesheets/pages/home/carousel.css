@@ -70,3 +70,10 @@
 .slide-dots-container .dot:hover {
     background-color: #717171
 }
+
+@media screen and (max-width: 350px) {
+    .slideshow-container img {
+        height: 10rem;
+        width: 10rem;
+    }
+}

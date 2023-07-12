@@ -12,9 +12,9 @@
 
 .contact-methods {
     width: 50%;
-    min-width: 60rem;
+    min-width: 40rem;
     max-width: 80%;
-    margin: 0 auto 2rem;
+    margin: 0 auto;
     font-size: 2rem;
 }
 
