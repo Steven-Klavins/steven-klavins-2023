@@ -62,4 +62,9 @@
     .form-title span {
         position: unset;
     }
+
+    .sk-form {
+        width: 100%;
+        max-width: 100%;
+    }
 }
