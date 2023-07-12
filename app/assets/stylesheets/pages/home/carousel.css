@@ -71,9 +71,14 @@
     background-color: #717171
 }
 
-@media screen and (max-width: 350px) {
+@media screen and (max-width: 450px) {
     .slideshow-container img {
         height: 10rem;
         width: 10rem;
+    }
+
+    .mySlides .text {
+        width: 30rem;
+        padding-left: 0rem;
     }
 }
