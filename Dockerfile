@@ -23,4 +23,6 @@ ENV BUNDLE_PATH /gems
 RUN bundle install
 
 EXPOSE 3000
+
+ENTRYPOINT ["/bin/rails"]
 CMD rails server -b 0.0.0.0
