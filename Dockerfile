@@ -22,8 +22,5 @@ ENV RAILS_LOG_TO_STDOUT="1" \
 ENV BUNDLE_PATH /gems
 RUN bundle install
 
-# Entry Point
-ENTRYPOINT ["/bin/rails"]
-CMD ["s", "-b", "0.0.0.0"]
-
 EXPOSE 3000
+CMD rails server -b 0.0.0.0
