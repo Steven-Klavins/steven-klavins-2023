@@ -2,41 +2,43 @@
   <div class="blog-container">
     <div class="blog-cards">
       <div>
-      <% blogs.each do |blog| %>
-        <div class="blog-card-container">
-          <a href="<%= blog_path blog %>" style="width: 100%">
-            <div class="blog-card"
-                 <% if blog.cover_image.attached? %>
-                 style="background-image: url('<%= url_for(blog.cover_image.url) %>');"
-                 <% end %>
-                 >
-              <h3><%= blog.title %></h3>
+        <% blogs.each do |blog| %>
+          <div class="blog-card-container">
+            <a href="<%= blog_path blog %>" style="width: 100%">
+              <div class="blog-card"
+                   <% if blog.cover_image.attached? %>
+                   style="background-image: url('<%= url_for(blog.cover_image.url) %>');"
+                   <% end %>
+                   >
+                <h3><%= blog.title %></h3>
 
-              <div class="blog-card-overlay"></div>
+                <div class="blog-card-overlay"></div>
 
-              <div class="blog-categories-overlay">
-                <ul>
-                  <% blog.categories.each do |category| %>
-                    <li>
-                      <%= category.name %>
-                    </li>
-                  <% end %>
-                </ul>
+                <div class="blog-card-date">
+                  <span><%= blog.created_at.day.ordinalize %></span>
+                  <span><%= blog.created_at.strftime('%b') %></span>
+                  <span><%= blog.created_at.strftime('%y') %></span>
+                </div>
               </div>
+            </a>
 
-              <div class="blog-card-date">
-                <span><%= blog.created_at.day.ordinalize %></span>
-                <span><%= blog.created_at.strftime('%b') %></span>
-                <span><%= blog.created_at.strftime('%y') %></span>
-              </div>
+            <div class="blog-categories-overlay">
+              <ul>
+                <% blog.categories.each do |category| %>
+                  <li>
+                    <%= link_to category.name, category_path(category) %>
+                  </li>
+                <% end %>
+              </ul>
             </div>
-          </a>
-        </div>
-      <% end %>
+          </div>
+        <% end %>
+
         <% unless blogs.count % 2 == 0 %>
           <div class="blog-card-container"></div>
         <% end %>
       </div>
+
       <div class="pagination-block">
         <%= paginate blogs %>
       </div>

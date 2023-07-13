@@ -40,6 +40,7 @@
 /* ==== Blog Cards ==== */
 
 .blog-card-container {
+    position: relative;
     display: flex;
     flex: 0 0 85%;
 }
@@ -165,6 +166,17 @@
 }
 
 /* ==== Shared Overlays ==== */
+.blog-categories-overlay {
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 2;
+    cursor: pointer;
+}
+
+.blog-categories-overlay a {
+    color: #ffffff;
+}
 
 .blog-categories-overlay ul {
     list-style: none;
@@ -206,6 +218,7 @@
 
 @media screen and (min-width: 1300px) {
     .blog-card-container {
+        position: relative;
         display: inline-block;
         width: 47%;
         margin-right: 1rem;
