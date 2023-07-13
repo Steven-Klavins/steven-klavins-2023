@@ -5,7 +5,7 @@ let slideIndex = 0;
 function showSlides() {
 
     let i;
-    let slides = document.getElementsByClassName("mySlides");
+    let slides = document.getElementsByClassName("carousel-slide-container");
     let dots = document.getElementsByClassName("dot");
 
     for (i = 0; i < slides.length; i++) {
