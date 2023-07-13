@@ -44,7 +44,6 @@
 
 .testimonials-container {
     width: 100%;
-    overflow-x: hidden;
     position: relative;
 }
 
@@ -58,51 +57,6 @@
     -webkit-animation-delay: .2s;
     animation: slide-left 1s forwards;
     animation-delay: .2s;
-}
-
-/* ==== Transitions ==== */
-
-@-webkit-keyframes slide-left {
-    100% {
-        left: 0;
-        opacity: 1;
-    }
-}
-
-@keyframes slide-left {
-    100% {
-        left: 0;
-        opacity: 1;
-    }
-}
-
-@-webkit-keyframes slide-right {
-    100% {
-        right: 0;
-        opacity: 1;
-    }
-}
-
-@keyframes slide-right {
-    100% {
-        right: 0;
-        opacity: 1;
-    }
-}
-
-/* ==== Technologies ==== */
-
-.home-tech-container {
-    position: relative;
-    display: flex;
-    flex-wrap: wrap;
-    padding: 0;
-    text-align: center;
-    margin: auto;
-    justify-content: left;
-    width: 96rem;
-    max-width: 100%;
-    overflow: hidden;
 }
 
 /* ==== Tech Icons ==== */
@@ -260,6 +214,36 @@
     height: 80%;
 }
 
+/* ==== Transitions ==== */
+
+@-webkit-keyframes slide-left {
+    100% {
+        left: 0;
+        opacity: 1;
+    }
+}
+
+@keyframes slide-left {
+    100% {
+        left: 0;
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes slide-right {
+    100% {
+        right: 0;
+        opacity: 1;
+    }
+}
+
+@keyframes slide-right {
+    100% {
+        right: 0;
+        opacity: 1;
+    }
+}
+
 /* ==== Media Queries ==== */
 
 @media screen and (max-width: 1360px) {
@@ -280,6 +264,7 @@
 }
 
 @media screen and (max-width: 1200px) {
+
     .areas-of-interest-container {
         display: block;
     }
@@ -290,18 +275,14 @@
 }
 
 @media screen and (max-width: 1000px) {
-    .home-tech-container {
-        margin: 0 auto;
-    }
 
     .testimonials-container {
         min-height: 45rem;
     }
-
-
 }
 
 @media screen and (max-width: 600px) {
+
     .home-block-section {
         border-bottom: solid 0.2rem rgba(242, 242, 242, 1);
         width: 100%
@@ -310,5 +291,13 @@
     .icon-container {
         margin-right: 1.98rem;
     }
-
 }
+
+@media screen and (max-width: 400px) {
+
+    .lead-tag-line {
+        margin: 0 auto 2rem !important;
+        font-size: 2.5rem !important;
+    }
+}
+
