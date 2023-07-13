@@ -6,16 +6,16 @@ FROM ruby:$RUBY_VERSION
 RUN apt-get update -qq && \
     apt-get install -y build-essential libvips bash bash-completion libffi-dev tzdata postgresql nodejs npm yarn && \
     apt-get clean && \
-    apt-get ca-certificates && \
+    apt-get update ca-certificates && \
     rm -rf /var/lib/apt/lists/* /usr/share/doc /usr/share/man
 
-RUN update-ca-certificates
 
 # Set production environment
 ENV RAILS_LOG_TO_STDOUT="1" \
     RAILS_SERVE_STATIC_FILES="true" \
     RAILS_ENV="production" \
     BUNDLE_WITHOUT="development"
+
 
   WORKDIR /app
   COPY Gemfile* .
