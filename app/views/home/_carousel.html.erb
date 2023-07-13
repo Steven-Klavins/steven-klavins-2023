@@ -1,8 +1,8 @@
 <div>
-  <div class="slideshow-container">
-    <div class="slideshow-inner">
-      <div class="mySlides">
-        <div class="mySlides-inner">
+  <div class="carousel-container">
+
+      <div class="carousel-slide-container">
+        <div class="carousel-slide">
           <img src='<%= image_url('icon-th.jpeg') %>' alt="Thomas Harper"/>
           <div class="text">
             <span>Thomas Harper - Software Engineer</span>
@@ -15,21 +15,20 @@
         </div>
       </div>
 
-      <div class="mySlides">
-        <div class="mySlides-inner">
-          <img src='<%= image_url('icon-ab.jpeg') %>' alt="Angelica Beristain"/>
-          <div class="text">
-            <span>Angelica Beristain - Lead UX Designer</span>
-            <div>
-              "His passion for technology and open-mindedness make
-              him an ideal teammate, he is always learning and willing to help others."
-            </div>
+    <div class="carousel-slide-container">
+      <div class="carousel-slide">
+        <img src='<%= image_url('icon-ab.jpeg') %>' alt="Angelica Beristain"/>
+        <div class="text">
+          <span>Angelica Beristain - Lead UX Designer</span>
+          <div>
+            "His passion for technology and open-mindedness make
+            him an ideal teammate, he is always learning and willing to help others."
           </div>
         </div>
       </div>
     </div>
 
-    <div class="slide-dots-container">
+    <div class="carousel-navigation">
       <span class="dot" onclick="currentSlide(0)"></span>
       <span class="dot" onclick="currentSlide(1)"></span>
     </div>
