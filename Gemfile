@@ -83,6 +83,7 @@ group :test do
   gem "webdrivers"
 end
 
-gem "sidekiq", "~> 7.1"
+gem "aws-sdk-s3", require: false
 
+gem "sidekiq", "~> 7.1"
 gem "devise", "~> 4.9"
