@@ -4,9 +4,8 @@ FROM ruby:$RUBY_VERSION
 
 # Install libvips for Active Storage preview support
 RUN apt-get update -qq && \
-    apt-get install -y build-essential libvips bash bash-completion libffi-dev tzdata postgresql nodejs npm yarn && \
+    apt-get install -y build-essential libvips bash bash-completion libffi-dev tzdata postgresql nodejs npm yarn ca-certificates && \
     apt-get clean && \
-    apt-get ca-certificates && \
     rm -rf /var/lib/apt/lists/* /usr/share/doc /usr/share/man
 
 
