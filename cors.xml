@@ -4,12 +4,10 @@
    <AllowedMethod>GET</AllowedMethod>
    <AllowedMethod>PUT</AllowedMethod>
    <AllowedMethod>POST</AllowedMethod>
+   <AllowedMethod>DELETE</AllowedMethod>
    <AllowedMethod>HEAD</AllowedMethod>
    <AllowedHeader>*</AllowedHeader>
-   <ExposeHeader>Origin</ExposeHeader>
-   <ExposeHeader>Content-Type</ExposeHeader>
-   <ExposeHeader>Content-MD5</ExposeHeader>
-   <ExposeHeader>Content-Disposition</ExposeHeader>
+   <ExposeHeader>ETag</ExposeHeader>
    <MaxAgeSeconds>3600</MaxAgeSeconds>
  </CORSRule>
 </CORSConfiguration>
