@@ -24,6 +24,7 @@
     bottom: 1rem;
     right: 0rem;
     font-size: 1.5rem;
+    margin-left: 1rem;
 }
 
 .sk-form form input[type='submit'] {
@@ -58,11 +59,7 @@
     }
 }
 
-@media screen and (max-width: 466px) {
-    .form-title span {
-        position: unset;
-    }
-
+@media screen and (max-width: 500px) {
     .sk-form {
         width: 100%;
         max-width: 100%;

@@ -4,31 +4,18 @@
 
 }
 
-.panel {
-    background: #efefef;
-    width: 100%;
-    max-width: 80rem;
-    height: max-content;
-    margin: 0 auto;
-}
-
-.panel .actions {
-    display: inline-block;
-}
-
-.panel h3 {
-    font-size: 2rem;
-    padding: 2rem 2rem 2rem;
-    background-color: #d8d8d8;
+.admin-panel a {
     color: #2a2a2a;
 }
 
-.panel button {
-    font-family: Roboto-Regular;
+.admin-panel ul {
+    padding: 2rem;
+}
+
+.admin-panel li {
+    list-style: none;
     font-size: 2rem;
-    background-color: #ffffff00;
-    border: none;
-    cursor: pointer;
+    padding: 0.5rem;
 }
 
 .admin-panel table {
@@ -46,16 +33,42 @@
     cursor: pointer;
 }
 
-.admin-panel ul {
-    padding: 2rem;
+.panel {
+    background: #efefef;
+    width: 100%;
+    max-width: 80rem;
+    height: max-content;
+    margin: 0 auto;
 }
 
-.admin-panel li {
-    list-style: none;
+.panel h3 {
     font-size: 2rem;
-    padding: 0.5rem;
+    padding: 2rem 2rem 2rem;
+    background-color: #d8d8d8;
+    color: #2a2a2a;
 }
 
-.admin-panel a {
-    color: #2a2a2a;
+.panel button {
+    font-family: Roboto-Regular;
+    font-size: 2rem;
+    background-color: #ffffff00;
+    border: none;
+    cursor: pointer;
+}
+
+.panel .actions {
+    display: inline-block;
+}
+
+@media screen and (max-width: 500px) {
+    .admin-panel {
+        width: 90%;
+
+    }
+
+    .admin-panel td {
+        font-family: Roboto-Regular;
+        font-size: 1.5rem;
+        padding: 0.5rem;
+    }
 }

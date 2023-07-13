@@ -45,7 +45,10 @@
 }
 
 .blog-cards {
-    width: 85%
+    width: 85%;
+    margin: 0 auto;
+    display: block;
+    text-align: center;
 }
 
 .blog-card {
@@ -62,10 +65,11 @@
 }
 
 .blog-card:hover {
-    background-size: 110% auto;
+    background-size: 190% auto;
 }
 
 .blog-card h3 {
+    text-align: left;
     color: #ffffff;
     padding-left: 1rem;
     position: absolute;
@@ -126,7 +130,7 @@
     padding: 1rem;
     margin-left: 1rem;
     background-color: #3737370d;
-    height: 151.7rem;
+    height: 152.6rem;
 }
 
 .blog-categories-box li {
@@ -192,10 +196,6 @@
     .blog-cards {
         margin: 0 auto;
     }
-
-    .blog-card:hover {
-        background-size: 160% auto;
-    }
 }
 
 @media screen and (max-width: 600px) {
@@ -203,4 +203,15 @@
         background-size: 140rem auto;
     }
 }
+
+@media screen and (min-width: 1300px) {
+    .blog-card-container {
+        display: inline-block;
+        width: 47%;
+        margin-right: 1rem;
+        margin-left: 1rem;
+    }
+}
+
+
 

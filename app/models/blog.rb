@@ -14,5 +14,5 @@ class Blog < ApplicationRecord
 
   # UI
   has_rich_text :body
-  paginates_per 5
+  paginates_per 10
 end

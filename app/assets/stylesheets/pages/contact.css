@@ -12,7 +12,7 @@
 
 .contact-methods {
     width: 50%;
-    min-width: 40rem;
+    min-width: 60rem;
     max-width: 80%;
     margin: 0 auto;
     font-size: 2rem;
@@ -86,4 +86,28 @@
 
 .copy-event.active {
     opacity: 1;
+}
+
+@media screen and (max-width: 800px) {
+    .contact-methods {
+        width: 80%;
+        min-width: 30rem;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .contact-methods {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .form-title span {
+        position: initial;
+        width: 100%;
+        margin-left: 0rem;
+    }
+
+    .contact-methods {
+        width: 100%!important;
+    }
 }
