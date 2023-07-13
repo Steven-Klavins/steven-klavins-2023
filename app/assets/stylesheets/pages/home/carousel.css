@@ -1,61 +1,72 @@
-.slideshow-container {
+/* ==== Carousel Container ==== */
+
+.carousel-container {
     height: min-content;
-    min-width: 45rem;
+    min-height: 18rem;
     max-width: 60rem;
     position: relative;
     margin: auto;
     font-family: 'Roboto-Regular';
 }
 
-.slideshow-container img {
-    position: relative;
-    height: 15rem;
-    width: 15rem;
-    border-radius: 50%;
-    background-color: #606060;
-    margin: auto;
-}
+/* ==== Slide Container ==== */
 
-.mySlides {
+.carousel-slide-container {
     display: none;
     height: 20rem;
     align-items: center;
 }
 
-.mySlides-inner {
+.carousel-slide-container div {
+    margin-top: 1rem;
+}
+
+.carousel-slide-container img {
+    position: relative;
+    height: 15rem;
+    width: 15rem;
+    border-radius: 50%;
+    background-color: #606060;
+    margin: auto 1rem;
+}
+
+.carousel-slide-container .text {
+    margin: auto;
+    text-align: left;
+    font-size: 2rem;
+    font-style: italic;
+    color: #121212;
+    display: inline-block;
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+.carousel-slide-container .text span {
+    font-weight: bold;
+    font-style: normal;
+    padding-bottom: 2rem;
+}
+
+/* ==== Slide ==== */
+
+.carousel-slide {
     height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.mySlides .text {
-    margin: auto;
-    text-align: left;
-    font-size: 2rem;
-    font-style: italic;
-    color: #121212;
-    width: 40rem;
-    display: inline-block;
-    padding-left: 2rem;
-    padding-right: 2rem;
-}
+/* ==== Navigation ==== */
 
-.mySlides div {
-    margin-top: 1rem;
-}
-
-.mySlides .text span {
-    font-weight: bold;
-    font-style: normal;
-    padding-bottom: 2rem;
-}
-
-.slide-dots-container {
+.carousel-navigation {
     text-align: center;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -4rem;
 }
 
-.slide-dots-container .dot {
+.carousel-navigation .dot {
     cursor: pointer;
     height: 15px;
     width: 15px;
@@ -66,19 +77,31 @@
     transition: background-color .6s ease
 }
 
-.slide-dots-container .active,
-.slide-dots-container .dot:hover {
+.carousel-navigation .active,
+.carousel-navigation .dot:hover {
     background-color: #717171
 }
 
-@media screen and (max-width: 450px) {
-    .slideshow-container img {
-        height: 10rem;
-        width: 10rem;
+@media screen and (max-width: 400px) {
+
+    .carousel-container {
+        height: 30rem;
     }
 
-    .mySlides .text {
-        width: 30rem;
-        padding-left: 0rem;
+    .carousel-slide-container img {
+        height: 30vw;
+        width: 30vw;
+    }
+
+    .carousel-slide-container .text span {
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+
+    .carousel-slide-container div {
+        display: block;
+        margin: 0 auto;
+        text-align: center;
     }
 }
