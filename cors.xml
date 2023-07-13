@@ -1,6 +1,6 @@
 <CORSConfiguration>
  <CORSRule>
-   <AllowedOrigin>*.https://stevenklavins.co.uk/</AllowedOrigin>
+   <AllowedOrigin>*</AllowedOrigin>
    <AllowedMethod>GET</AllowedMethod>
    <AllowedMethod>PUT</AllowedMethod>
    <AllowedMethod>POST</AllowedMethod>
