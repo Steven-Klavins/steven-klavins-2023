@@ -1,7 +1,11 @@
 <CORSConfiguration>
  <CORSRule>
    <AllowedOrigin>stevenklavins.co.uk</AllowedOrigin>
+   <AllowedMethod>GET</AllowedMethod>
    <AllowedMethod>PUT</AllowedMethod>
+   <AllowedMethod>POST</AllowedMethod>
+   <AllowedMethod>DELETE</AllowedMethod>
+   <AllowedMethod>HEAD</AllowedMethod>
    <AllowedHeader>*</AllowedHeader>
    <ExposeHeader>Origin</ExposeHeader>
    <ExposeHeader>Content-Type</ExposeHeader>
