@@ -8,9 +8,6 @@ RUN apt-get update -qq && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* /usr/share/doc /usr/share/man
 
-# Rails app lives here
-WORKDIR /app
-COPY . /app/
 
 # Set production environment
 ENV RAILS_LOG_TO_STDOUT="1" \
@@ -18,11 +15,10 @@ ENV RAILS_LOG_TO_STDOUT="1" \
     RAILS_ENV="production" \
     BUNDLE_WITHOUT="development"
 
-# Install Gems
-ENV BUNDLE_PATH /gems
-RUN bundle install
 
-EXPOSE 3000
-
-ENTRYPOINT ["/bin/rails"]
-CMD rails server -b 0.0.0.0
+  WORKDIR /app
+  COPY Gemfile* .
+  RUN bundle install
+  COPY . .
+  EXPOSE 3000
+  CMD ["rails", "server", "-b", "0.0.0.0"]
