@@ -1,0 +1,15 @@
+<CORSConfiguration>
+ <CORSRule>
+   <AllowedOrigin>https://stevenklavins.co.uk/</AllowedOrigin>
+   <AllowedMethod>GET</AllowedMethod>
+   <AllowedMethod>PUT</AllowedMethod>
+   <AllowedMethod>POST</AllowedMethod>
+   <AllowedMethod>HEAD</AllowedMethod>
+   <AllowedHeader>*</AllowedHeader>
+   <ExposeHeader>Origin</ExposeHeader>
+   <ExposeHeader>Content-Type</ExposeHeader>
+   <ExposeHeader>Content-MD5</ExposeHeader>
+   <ExposeHeader>Content-Disposition</ExposeHeader>
+   <MaxAgeSeconds>3600</MaxAgeSeconds>
+ </CORSRule>
+</CORSConfiguration>
