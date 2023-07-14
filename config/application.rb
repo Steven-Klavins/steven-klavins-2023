@@ -14,6 +14,12 @@ module StevenKlavins2023
     # Include custom libs.
     config.autoload_paths << Rails.root.join('lib')
 
+    # Compress HTML Responses
+    config.middleware.use Rack::Deflater
+
+    # Use VIPs
+    Rails.application.config.active_storage.variant_processor = :vips
+
     # Configuration for the application, engines, and railties goes here.
     #
     # These settings can be overridden in specific environments using the files
