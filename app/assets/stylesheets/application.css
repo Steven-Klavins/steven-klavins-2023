@@ -98,6 +98,10 @@ li {
     color: #2a2a2a;
 }
 
+.sk-link-margin-top {
+    margin-top: 6rem;
+}
+
 .file-upload {
     position: relative;
     display: flex;
@@ -194,7 +198,7 @@ li {
     width: 80%;
     max-width: 120rem;
     font-size: 2rem;
-    margin: 0 auto 12rem;
+    margin: 0 auto 18rem;
 }
 
 trix-editor {
