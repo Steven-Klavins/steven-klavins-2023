@@ -11,6 +11,11 @@
     </div>
   <% end %>
 
+  <div class="file-upload">
+    <%= form.label :cover_image, style: "display: block" %>
+    <%= form.file_field :cover_image %>
+  </div>
+
   <div>
     <%= form.label :name, style: "display: block" %>
     <%= form.text_field :name %>
