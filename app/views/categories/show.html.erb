@@ -1,2 +1,7 @@
-<%= render 'shared/banner', title: "#{@category.name} Blogs" %>
+<% if @category.cover_image.url %>
+  <%= render 'shared/banner', cover_img: @category.cover_image.url, title: "#{@category.name} Blogs" %>
+<% else %>
+  <%= render 'shared/banner', title: "#{@category.name} Blogs" %>
+<% end %>
+
 <%= render 'shared/blogs_collection', blogs: @blogs %>

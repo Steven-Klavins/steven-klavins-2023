@@ -10,6 +10,7 @@ class Category < ApplicationRecord
   # Relationships
   has_many :blogs_categories
   has_many :blogs, through: :blogs_categories
+  has_one_attached :cover_image, dependent: :destroy
 
   # UI
   paginates_per 5

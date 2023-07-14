@@ -1,33 +1,22 @@
 <% if defined? cover_img %>
   <div class="main-banner" style="background-image: url('<%= cover_img %>')">
-    <div class="main-banner-overlay"></div>
-    <h1><%= title %></h1>
-    <% if defined? categories %>
-      <div class="blog-categories-overlay">
-        <ul>
-          <% categories.each do |category| %>
-            <li>
-              <%= link_to category.name, category_path(category) %>
-            </li>
-          <% end %>
-        </ul>
-      </div>
-    <% end %>
-  </div>
 <% else %>
   <div class="main-banner" style="background-image: url('<%= image_url("banner_img_1.jpeg") %>')">
-    <div class="main-banner-overlay"></div>
-    <h1><%= title %></h1>
-    <% if defined? categories %>
-      <div class="blog-categories-overlay">
-        <ul>
-          <% categories.each do |category| %>
-            <li>
-              <%= category.name %>
-            </li>
-          <% end %>
-        </ul>
-      </div>
-    <% end %>
+<% end %>
+
+<div class="main-banner-overlay"></div>
+
+<h1><%= title %></h1>
+
+<% if defined? categories %>
+  <div class="blog-categories-overlay">
+    <ul>
+      <% categories.each do |category| %>
+        <li>
+          <%= link_to category.name, category_path(category) %>
+        </li>
+      <% end %>
+    </ul>
   </div>
 <% end %>
+</div>
