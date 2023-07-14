@@ -63,6 +63,8 @@ group :development, :test do
   gem "byebug"
   gem 'rspec-rails'
   gem "letter_opener"
+  # Check for N+1 queries
+  gem "bullet"
 end
 
 group :development do

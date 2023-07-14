@@ -10,12 +10,14 @@ class BlogsController < ApplicationController
 
   # GET /blogs
   def index
-    @blogs = Blog.order(created_at: :desc).page params[:page]
+    # Eager load with_attached cover image and paginate with page
+    @blogs = Blog.with_attached_cover_image.order(created_at: :desc).page params[:page]
   end
 
   # GET /blogs/:title
   def show
-    @blog = Blog.friendly.find(params[:id])
+    # Eager load with_attached images
+    @blog = Blog.with_attached_cover_image.with_rich_text_body.friendly.find(params[:id])
   end
 
   # GET /blogs/new
