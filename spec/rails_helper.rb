@@ -9,7 +9,7 @@ require 'rspec/rails'
 # Configure drivers to run feature tests headless
 
 driver = :selenium_chrome_headless
-Capybara.server = :puma, {Silent: true}
+Capybara.server = :puma, { Silent: true }
 
 Capybara.register_driver driver do |app|
   options = ::Selenium::WebDriver::Chrome::Options.new
@@ -95,4 +95,16 @@ RSpec.configure do |config|
   config.filter_rails_from_backtrace!
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
+
+  # Use Bullet to check for N+1 queries
+  if Bullet.enable?
+    config.before(:each) do
+      Bullet.start_request
+    end
+
+    config.after(:each) do
+      Bullet.perform_out_of_channel_notifications if Bullet.notification?
+      Bullet.end_request
+    end
+  end
 end
