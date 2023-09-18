@@ -86,13 +86,15 @@
 
 .icons-block {
     width: 100%;
+    max-width: 50rem;
+    margin-left: 1rem;
+    margin-right: 2rem;
     display: flex;
     flex-wrap: inherit;
-    max-width: 50rem;
 }
 
 .icon-container {
-    height: 12rem;
+    height: 10rem;
     margin-right: 2rem;
 }
 
@@ -106,12 +108,12 @@
     height: 90%;
     width: 100%;
     fill: white;
-    padding: 1rem;
+    padding: .5rem;
 }
 
 .icon-container .icon {
-    width: 8rem;
-    height: 8rem;
+    width: 6rem;
+    height: 6rem;
     position: relative;
     justify-content: center;
     margin: 1rem 0rem 0.6rem;
@@ -133,6 +135,7 @@
     max-width: 50rem;
     margin-left: 1rem;
     margin-right: 2rem;
+    padding-bottom: 1rem;
 }
 
 .icon-title h3 {
@@ -259,6 +262,10 @@
     }
 
     .icon-title {
+        margin: 0 auto;
+    }
+
+    .icons-block {
         margin: 0 auto;
     }
 }

@@ -19,8 +19,10 @@ jobs:
     - uses: ruby/setup-ruby@v1
       with:
         ruby-version: '3.0.3' 
-        bundler-cache: true 
-    - uses: browser-actions/setup-chrome@latest
+        bundler-cache: true
+    - uses: browser-actions/setup-chrome@v1
+      with:
+          chrome-version: 'stable'
     - run: chrome --version
     - name: Set up database schema
       run: |
