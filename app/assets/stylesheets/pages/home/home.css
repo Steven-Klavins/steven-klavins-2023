@@ -106,12 +106,12 @@
     height: 90%;
     width: 100%;
     fill: white;
-    padding: 1rem;
+    padding: .5rem;
 }
 
 .icon-container .icon {
-    width: 8rem;
-    height: 8rem;
+    width: 6rem;
+    height: 6rem;
     position: relative;
     justify-content: center;
     margin: 1rem 0rem 0.6rem;
