@@ -72,6 +72,8 @@ end
 # AWS gem for S3 service adapter
 gem "aws-sdk-s3", require: false
 
+# For GitHub API requests
+gem "httparty"
 
 # Sidekiq for background jobs
 gem "sidekiq", "~> 7.1"
