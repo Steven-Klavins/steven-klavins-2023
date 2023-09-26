@@ -42,4 +42,14 @@ module ApplicationHelper
   rescue
     return "Descriptions unavailable..."
   end
+
+  # Return the description editor partial, remember to include the description_editor.js if you use this
+  def editable_description(page, section)
+    render partial: "description_editor/description_editor",
+           locals: {
+             description: get_description(page, section),
+             page: page,
+             section: section
+           }
+  end
 end
