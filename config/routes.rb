@@ -3,11 +3,12 @@ require 'sidekiq/web'
 Rails.application.routes.draw do
   devise_for :users, :skip => [:sessions]
 
-  # Authentication for Sidekiq activity panel
+  # Authentication for admin only actions
   devise_scope :user do
     authenticated :user do
       mount Sidekiq::Web => "/sidekiq"
       get '/admin-panel', to: 'pages#admin_panel'
+      post '/update-descriptions', to: 'description_editor#update_yaml_description'
     end
   end
 
