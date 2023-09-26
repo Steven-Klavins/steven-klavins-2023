@@ -7,12 +7,9 @@
     <div class="about-img-container">
       <%= image_tag("about-photo-1.jpg", alt: "Image of Steven Klavins") %>
     </div>
-    <p>
-      <%= get_description("About", "background_p1") %>
-      <br>
-      <br>
-      <%= get_description("About", "background_p2") %>
-    </p>
+
+    <%= editable_description("About", "background_p1") %>
+    <%= editable_description("About", "background_p2") %>
   </div>
 
   <div class="about-row fade-in">
@@ -20,12 +17,9 @@
     <div class="about-img-container">
       <%= image_tag("makers-hackathon.jpg", alt: "2022 Hackathon at Maker Academy") %>
     </div>
-    <p>
-      <%= get_description("About", "education_p1") %>
-      <br>
-      <br>
-      <%= get_description("About", "education_p2") %>
-    </p>
+
+    <%= editable_description("About", "education_p1") %>
+    <%= editable_description("About", "education_p2") %>
   </div>
 
   <div class="about-row fade-in">
@@ -33,15 +27,10 @@
     <div class="about-img-container">
       <%= image_tag("about-photo-2.jpg", alt: "Steven Klavins Playing Guitar") %>
     </div>
-    <p>
-      <%= get_description("About", "hobbies_p1") %>
-      <br>
-      <br>
-      <%= get_description("About", "hobbies_p2") %>
-      <br>
-      <br>
-      <%= get_description("About", "hobbies_p3") %>
-    </p>
+
+    <%= editable_description("About", "hobbies_p1") %>
+    <%= editable_description("About", "hobbies_p2") %>
+    <%= editable_description("About", "hobbies_p3") %>
   </div>
 </div>
 
