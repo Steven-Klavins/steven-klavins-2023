@@ -1,16 +1,15 @@
 <%= render 'shared/banner', title: "Welcome", cover_img: image_url("banner_img_2.jpeg") %>
 <%= javascript_include_tag('shared/page_transitions.js') %>
 <%= javascript_include_tag('shared/animations.js') %>
-<div>
-  <%#= render 'home/pc-animation' %>
 
+<div>
   <div class="home">
     <div>
       <div class="home-block-section">
         <div class="testimonials-container">
-          <p id="tag-line" class="lead-tag-line">
-            <%= get_description("Home", "heading") %>
-          </p>
+          <span id="tag-line" class="lead-tag-line">
+            <%= editable_description("Home", "heading") %>
+          </span>
           <div class="testimonials">
             <%= render 'home/carousel' %>
           </div>
@@ -48,9 +47,7 @@
               <span>JavaScript</span>
             </div>
           </div>
-          <p>
-            <%= get_description("Home", "languages_proficient_in") %>
-          </p>
+          <%= editable_description("Home", "languages_proficient_in") %>
         </div>
 
         <div class="icons-container">
@@ -89,9 +86,7 @@
               <span>Python</span>
             </div>
           </div>
-          <p>
-            <%= get_description("Home", "languages_familiar_with") %>
-          </p>
+          <%= editable_description("Home", "languages_familiar_with") %>
         </div>
       </div>
     </div>
@@ -120,9 +115,7 @@
               <span>Rails</span>
             </div>
           </div>
-          <p>
-            <%= get_description("Home", "technologies_proficient_in") %>
-          </p>
+          <%= editable_description("Home", "technologies_proficient_in") %>
         </div>
 
         <div class="icons-container">
@@ -175,9 +168,7 @@
               <span>NodeJS</span>
             </div>
           </div>
-          <p>
-            <%= get_description("Home", "technologies_familiar_with") %>
-          </p>
+          <%= editable_description("Home", "technologies_familiar_with") %>
         </div>
       </div>
     </div>
@@ -209,23 +200,17 @@
         <div>
           <h3>Software Engineering</h3>
           <%= svg("graphic-01-coding.svg") %>
-          <p>
-            <%= get_description("Home", "areas_of_interest_software") %>
-          </p>
+          <%= editable_description("Home", "areas_of_interest_software") %>
         </div>
         <div>
           <h3>CAD & CAM</h3>
           <%= svg("graphic-02-3d.svg") %>
-          <p>
-            <%= get_description("Home", "areas_of_interest_cad") %>
-          </p>
+          <%= editable_description("Home", "areas_of_interest_cad") %>
         </div>
         <div>
           <h3>Electrical Engineering</h3>
           <%= svg("graphic-03-electric.svg") %>
-          <p>
-            <%= get_description("Home", "areas_of_interest_electrical") %>
-          </p>
+          <%= editable_description("Home", "areas_of_interest_electrical") %>
         </div>
       </div>
     </div>
