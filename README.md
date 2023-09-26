@@ -41,8 +41,6 @@ In this project, site descriptions are checked into version control via the
 * **GIT_ACCESS_TOKEN** - Your GitHub access token
 * **REPO_URL** - The Repo URL where the descriptions YAML is checked in 
 `https://api.github.com/repos/UserName/RepoName`
-* **FILE_PATH** - The path to the descriptions file in the repo  
-`some_folder/descriptions.yml`
 
 Some of the more standard Rails stuff includes:
 
