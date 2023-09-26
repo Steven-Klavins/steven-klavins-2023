@@ -1,11 +1,10 @@
 <%= render 'shared/banner', title: "Contact", cover_img: image_url("banner_img_2.jpeg") %>
 <%= javascript_include_tag('contact/contact.js') %>
+
 <div class="contact">
   <div class="contact-methods">
     <h3>Fancy a chat?</h3>
-    <p>
-      <%= get_description("Contact", "heading") %>
-    </p>
+      <%= editable_description("Contact", "heading") %>
     <ul>
       <li>
         <span class="icon-linkedin"></span>
