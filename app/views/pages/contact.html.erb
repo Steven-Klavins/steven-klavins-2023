@@ -1,12 +1,10 @@
 <%= render 'shared/banner', title: "Contact", cover_img: image_url("banner_img_2.jpeg") %>
 <%= javascript_include_tag('contact/contact.js') %>
+
 <div class="contact">
   <div class="contact-methods">
     <h3>Fancy a chat?</h3>
-    <p>
-      Hello! Firstly, thanks for visiting my site! If you would like to arrange a chat,
-      please contact me via email or LinkedIn. Alternatively you can fill out the contact form found below.
-    </p>
+      <%= editable_description("Contact", "heading") %>
     <ul>
       <li>
         <span class="icon-linkedin"></span>

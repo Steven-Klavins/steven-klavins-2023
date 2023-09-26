@@ -38,3 +38,10 @@
 
 # Ignore Byebug History
 .byebug_history
+
+# Ignore generated descriptions file
+descriptions.yml
+
+# Ignore sitemaps
+sitemap.xml
+sitemap.xml.gz

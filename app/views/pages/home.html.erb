@@ -1,17 +1,15 @@
 <%= render 'shared/banner', title: "Welcome", cover_img: image_url("banner_img_2.jpeg") %>
 <%= javascript_include_tag('shared/page_transitions.js') %>
 <%= javascript_include_tag('shared/animations.js') %>
-<div>
-  <%#= render 'home/pc-animation' %>
 
+<div>
   <div class="home">
     <div>
       <div class="home-block-section">
         <div class="testimonials-container">
-          <p id="tag-line" class="lead-tag-line">
-            "A dedicated Full-Stack Engineer with over <%= years_experience %> years of industry experience, Makers Academy alumnus,
-            and university graduate holding a BA in Digital Arts and Technology."
-          </p>
+          <span id="tag-line" class="lead-tag-line">
+            <%= editable_description("Home", "heading") %>
+          </span>
           <div class="testimonials">
             <%= render 'home/carousel' %>
           </div>
@@ -49,12 +47,7 @@
               <span>JavaScript</span>
             </div>
           </div>
-          <p>
-            Ruby and Javascript form a significant part of my industry experience. I have utilized both languages
-            extensively in developing responsive JS interfaces and Rails applications. Further, while attending
-            Makers Academy, I immersed myself in the study and practical application of both languages, exploring
-            a variety of use cases and frameworks.
-          </p>
+          <%= editable_description("Home", "languages_proficient_in") %>
         </div>
 
         <div class="icons-container">
@@ -93,13 +86,7 @@
               <span>Python</span>
             </div>
           </div>
-          <p>
-            I am familiar with several languages, both in and outside of a commercial setting, and I continuously
-            strive to expand my vocabulary. I have commercial experience using Python and Java. Specifically, I
-            have contributed to the development and maintenance of a flagship Java application, as well as a number
-            of Sphinx sites. Furthermore, I have also become familiar with C++ through game development and my
-            ongoing exploration into the world of microcontrollers.
-          </p>
+          <%= editable_description("Home", "languages_familiar_with") %>
         </div>
       </div>
     </div>
@@ -128,12 +115,7 @@
               <span>Rails</span>
             </div>
           </div>
-          <p>
-            My experience with Ruby on Rails spans more than 3 years. During my time at Amphora Research Systems I
-            successfully upgraded, maintained, and developed multiple commercial projects, further deepening my
-            knowledge of the Rails ecosystem. As a result, I have gained a competent grasp of the framework and
-            its intricacies.
-          </p>
+          <%= editable_description("Home", "technologies_proficient_in") %>
         </div>
 
         <div class="icons-container">
@@ -186,12 +168,7 @@
               <span>NodeJS</span>
             </div>
           </div>
-          <p>
-            I am familiar with a variety of technologies, including Docker, Spring MVC, Flask, Node, and React,
-            among many others. My work ethic is fueled by curiosity, which drives me to continually broaden my
-            knowledge and skill set. I find the journey of learning new skills to be deeply enriching,
-            and I always approach it with enthusiasm.
-          </p>
+          <%= editable_description("Home", "technologies_familiar_with") %>
         </div>
       </div>
     </div>
@@ -223,34 +200,17 @@
         <div>
           <h3>Software Engineering</h3>
           <%= svg("graphic-01-coding.svg") %>
-          <p>
-            My primary skill set is in programming and I have studied it avidly since 2019. I independently taught
-            myself OOP principles, attended Makers Academy and joined the industry in early 2021.
-            I'm continually broadening my knowledge and in the past year I have successfully completed six
-            online development courses totaling over 250 hours of lecture time.
-          </p>
+          <%= editable_description("Home", "areas_of_interest_software") %>
         </div>
         <div>
           <h3>CAD & CAM</h3>
           <%= svg("graphic-02-3d.svg") %>
-          <p>
-            Having pursued a degree with a strong focus on 3D design, I found myself inevitably drawn into the
-            captivating world of 3D printing and parametric modeling. It is difficult to put into words the
-            overwhelming sense of empowerment I have felt while witnessing the ever-increasing accessibility of
-            additive and subtractive manufacturing. This accessibility has opened up avenues for me to explore
-            the practical applications of mechanical engineering and kinematics in ways I never anticipated.
-          </p>
+          <%= editable_description("Home", "areas_of_interest_cad") %>
         </div>
         <div>
           <h3>Electrical Engineering</h3>
           <%= svg("graphic-03-electric.svg") %>
-          <p>
-            In early 2020, my fascination with the potential uses of microcontrollers prompted me to dive into the
-            world of electronics. This pursuit led me to dedicate my spare time to studying this field, with the
-            ultimate aim of bridging my knowledge between software and hardware. I remain immersed in this field,
-            continually striving to reach a level of expertise where I can confidently develop my own PCBs from the
-            ground up.
-          </p>
+          <%= editable_description("Home", "areas_of_interest_electrical") %>
         </div>
       </div>
     </div>

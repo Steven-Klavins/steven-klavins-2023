@@ -44,6 +44,12 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="Steven Klavins Portpolio Website" content="&nbsp;"/>
 
+  <% # ==== JavaScript ==== %>
+  <% # Only include edit action JS when an admin is logged in %>
+  <% if current_user %>
+    <%= javascript_include_tag('description_editor/description_editor.js') %>
+  <% end  %>
+
   <%= csrf_meta_tags %>
   <%= csp_meta_tag %>
 </head>

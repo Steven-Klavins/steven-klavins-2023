@@ -24,8 +24,32 @@ module ApplicationHelper
 
   # Return my total years of experience.
   def years_experience
-    start_date = DateTime.new(2021,2)
+    start_date = DateTime.new(2021, 2)
     months = (Time.now.utc.to_date.year * 12 + Time.now.utc.to_date.month) - (start_date.year * 12 + start_date.month)
     months / 12
+  end
+
+  # Retrieve YAML descriptions, if a value is nil or the file cant be retrieved return 'Description unavailable...'
+  def get_description(page, section)
+    begin
+      descriptions = YAML.load(File.read("#{Rails.root}/descriptions.yml"))
+      if descriptions[page][section] != nil && descriptions[page][section] != ""
+        return descriptions[page][section]
+      else
+        return "Description unavailable..."
+      end
+    end
+  rescue
+    return "Descriptions unavailable..."
+  end
+
+  # Return the description editor partial, remember to include the description_editor.js if you use this
+  def editable_description(page, section)
+    render partial: "description_editor/description_editor",
+           locals: {
+             description: get_description(page, section),
+             page: page,
+             section: section
+           }
   end
 end

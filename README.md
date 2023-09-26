@@ -35,11 +35,18 @@ use [DigitalOcean Spaces](https://try.digitalocean.com/cloud-storage/) a storage
 * **SMTP_PASSWORD** - Your SMTP app password
 * **SMTP_EMAIL** - The email associated with the password.
 
+In this project, site descriptions are checked into version control via the 
+[GitHub API](https://docs.github.com/en/rest?apiVersion=2022-11-28).
+
+* **GIT_ACCESS_TOKEN** - Your GitHub access token
+* **REPO_URL** - The Repo URL where the descriptions YAML is checked in 
+`https://api.github.com/repos/UserName/RepoName`
+
 Some of the more standard Rails stuff includes:
 
-* **RAILS_MASTER_KEY**
-* **DATABASE_URL**
-* **REDIS_URL**
+* **RAILS_MASTER_KEY** - Your Rails master key
+* **DATABASE_URL** - Your database URL
+* **REDIS_URL** - Your Redis URL
 
 ## How To Run
 

@@ -1,0 +1,37 @@
+.description-editor {
+    width: 80%;
+}
+
+.description-editor textarea {
+    width: 100%;
+    height: min-content;
+    font-family: "Roboto-Regular";
+    padding: 0.5rem;
+    font-size: 1.5rem;
+}
+
+.description-editor-button-block {
+    position: inherit;
+}
+
+.description-editor button, .description-editor input {
+    font-size: 1rem!important;
+    background: #2a2a2a!important;
+    font-family: "Roboto-Regular";
+    color: #ffffff;
+    padding: 0.4rem;
+    border: none;
+    cursor: pointer;
+    display: inline-block;
+    margin-top: 1rem;
+}
+
+.description-editor-open-button {
+    background: #2a2a2a!important;
+    font-size: 1rem;
+    font-family: "Roboto-Regular";
+    color: #ffffff;
+    padding: 0.4rem;
+    border: none;
+    cursor: pointer;
+}
