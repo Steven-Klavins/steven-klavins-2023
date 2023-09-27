@@ -9,6 +9,7 @@ Rails.application.routes.draw do
       mount Sidekiq::Web => "/sidekiq"
       get '/admin-panel', to: 'pages#admin_panel'
       post '/update-descriptions', to: 'description_editor#update_yaml_description'
+      get '/publish-blog/:id' , to: 'blogs#publish', as: "publish-blog"
     end
   end
 
