@@ -57,4 +57,12 @@ RSpec.describe Blog, type: :model do
     BlogsCategory.create!(blog_id: blog.id, category_id: @category_2.id)
     expect(blog.categories.count).to eq(1)
   end
+
+  it "sets draft to a default value of false" do
+    blog = Blog.create!(
+      title: "New blog post",
+      body: "Test Body"
+    )
+    expect(blog.draft).to eq(false)
+  end
 end
