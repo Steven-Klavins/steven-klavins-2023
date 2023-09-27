@@ -1,16 +1,33 @@
 <%= render 'shared/banner', title: "Admin", cover_img: image_url("banner_img_2.jpeg") %>
 <%= javascript_include_tag('shared/confirmations.js') %>
+<%= javascript_include_tag('admin_panel/admin_panel.js') %>
 
 <div class="admin-panel">
   <div class="panel">
-
+    
     <h3>Blogs</h3>
 
     <ul>
       <li>
         <%= link_to("Create A New Blog +", new_blog_path, style: "color: green;") %>
       </li>
+      <li>
+        <button id="draft-toggle-button" onclick="toggleDraftsOn()">Drafts &#9207;</button>
+      </li>
     </ul>
+
+    <div id="blog-drafts-list" class="drafts-list" style="display: none">
+      <table>
+        <% Blog.all.where(draft: true).each do |blog| %>
+          <tr>
+            <td><%= blog.title %></td>
+            <td><%= link_to "Edit", (edit_blog_path(blog)), style: "color: green;" %></td>
+            <td><%= render "shared/delete_confirmation_for", resource: blog, resource_identifier: blog.title %></td>
+            <td><%= link_to "Publish", publish_blog_path(blog.id) %></td>
+          </tr>
+        <% end %>
+      </table>
+    </div>
 
     <h3>Categories</h3>
 
