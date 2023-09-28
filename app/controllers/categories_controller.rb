@@ -11,7 +11,8 @@ class CategoriesController < ApplicationController
   # GET /blogs/category/:name
   def show
     blogs = Category.find(params[:id]).blogs
-    @blogs = blogs.order(created_at: :desc).page params[:page]
+    # Only return published blogs
+    @blogs = blogs.where(draft: false).order(created_at: :desc).page params[:page]
   end
 
   # GET /blogs/category/new

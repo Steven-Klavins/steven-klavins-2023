@@ -11,13 +11,13 @@ class BlogsController < ApplicationController
   # GET /blogs
   def index
     # Eager load with_attached cover image and paginate with page
-    @blogs = Blog.with_attached_cover_image.order(created_at: :desc).page params[:page]
+    @blogs = Blog.where(draft: false).with_attached_cover_image.order(created_at: :desc).page params[:page]
   end
 
   # GET /blogs/:title
   def show
     # Eager load with_attached images
-    @blog = Blog.with_attached_cover_image.with_rich_text_body.friendly.find(params[:id])
+    @blog = Blog.where(draft: false).with_attached_cover_image.with_rich_text_body.friendly.find(params[:id])
   end
 
   # GET /blogs/new
@@ -29,14 +29,26 @@ class BlogsController < ApplicationController
   def edit
   end
 
+  # Update draft status and publish blog
+  def publish
+    blog = Blog.find(params[:id])
+    blog.update!(draft: false)
+    redirect_to blog_url(blog)
+  end
+
   # POST /blogs
   def create
     @blog = Blog.new(blog_params)
 
     respond_to do |format|
       if @blog.save
-        format.html { redirect_to blog_url(@blog), notice: "Blog was successfully created." }
-        format.json { render :show, status: :created, location: @blog }
+        # Check to see if this is a draft blog first.
+        if @blog.draft
+          format.html { redirect_to admin_panel_url }
+        else
+          format.html { redirect_to blog_url(@blog), notice: "Blog was successfully created." }
+          format.json { render :show, status: :created, location: @blog }
+        end
       else
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @blog.errors, status: :unprocessable_entity }
@@ -48,8 +60,13 @@ class BlogsController < ApplicationController
   def update
     respond_to do |format|
       if @blog.update(blog_params)
-        format.html { redirect_to blog_url(@blog), notice: "Blog was successfully updated." }
-        format.json { render :show, status: :ok, location: @blog }
+        # Check to see if this has been updated to a draft blog first.
+        if @blog.draft
+          format.html { redirect_to admin_panel_url }
+        else
+          format.html { redirect_to blog_url(@blog), notice: "Blog was successfully updated." }
+          format.json { render :show, status: :ok, location: @blog }
+        end
       else
         format.html { render :edit, status: :unprocessable_entity }
         format.json { render json: @blog.errors, status: :unprocessable_entity }
@@ -68,13 +85,14 @@ class BlogsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_blog
-      @blog = Blog.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def blog_params
-      params.require(:blog).permit(:title, :body, :cover_image, :category_ids => [])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_blog
+    @blog = Blog.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def blog_params
+    params.require(:blog).permit(:title, :body, :cover_image, :draft, :category_ids => [])
+  end
 end
