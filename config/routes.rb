@@ -1,6 +1,7 @@
 require 'sidekiq/web'
 
 Rails.application.routes.draw do
+  resources :experiences
   devise_for :users, :skip => [:sessions]
 
   # Authentication for admin only actions
