@@ -1,0 +1,39 @@
+<% # Eager load experiences %>
+<% experiences = Experience.includes(company_logo_attachment: [:blob]) %>
+
+<% if experiences.any? %>
+  <% experiences.each do |experience| %>
+    <div class="experience">
+      <a href="<%= experience.company_url %>">
+        <%= image_tag(experience.company_logo, alt: "#{experience.company} Logo") %>
+      </a>
+      <h3>
+        <%= experience.position %>
+        <%= experience.start_date.strftime("%m/%Y") %> -
+        <%= experience.end_date.strftime("%m/%Y") %>
+      </h3>
+      <p>
+        <%= experience.description %>
+      </p>
+    </div>
+    <% if current_user %>
+      <div id="experience-toolbar" class="experience-toolbar">
+        <ul>
+          <li><%= link_to "Edit +", edit_experience_path(experience), id: "edit-experience-#{experience.id}", style: "color: green;" %></li>
+          <li><%= link_to "Add +", new_experience_path, style: "color: green;" %></li>
+          <li>
+            <%= render "shared/delete_confirmation_for", resource: experience, resource_identifier: experience.company %>
+          </li>
+        </ul>
+      </div>
+    <% end %>
+  <% end %>
+
+<% elsif current_user %>
+  <div id="experience-toolbar" class="experience-toolbar">
+    <ul>
+      <li><%= link_to "Add +", new_experience_path, style: "color: green;" %></li>
+    </ul>
+  </div>
+<% end %>
+
