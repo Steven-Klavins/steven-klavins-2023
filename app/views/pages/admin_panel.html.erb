@@ -1,10 +1,9 @@
 <%= render 'shared/banner', title: "Admin", cover_img: image_url("banner_img_2.jpeg") %>
-<%= javascript_include_tag('shared/confirmations.js') %>
 <%= javascript_include_tag('admin_panel/admin_panel.js') %>
 
 <div class="admin-panel">
   <div class="panel">
-    
+
     <h3>Blogs</h3>
 
     <ul>
@@ -32,20 +31,24 @@
     <h3>Categories</h3>
 
     <table>
-      <% Category.all.each_with_index do |category, index| %>
-        <tr>
-          <td><%= category.name %></td>
-          <td><%= link_to "Update", edit_category_path(category), style: "color: green;" %></td>
-          <td>
-            <%= render "shared/delete_confirmation_for", resource: category, resource_identifier: category.name %>
-          </td>
-
-          <% if index == 0 %>
-            <td><%= link_to("Create A New Category +", new_category_path, style: "color: green;") %></td>
-          <% else %>
-            <td></td>
-          <% end %>
-        </tr>
+      <% if Category.all.length == 0 %>
+        <td><%= link_to("Create A New Category +", new_category_path, style: "color: green;") %></td>
+      <% else %>
+        <% Category.all.each_with_index do |category, index| %>
+          <tr>
+            <td><%= category.name %></td>
+            <td><%= link_to "Update", edit_category_path(category), style: "color: green;" %></td>
+            <td>
+              <%= render "shared/delete_confirmation_for", resource: category, resource_identifier: category.name %>
+            </td>
+            <% # Add Create A New Category to the first table row. %>
+            <% if index == 0 %>
+              <td><%= link_to("Create A New Category +", new_category_path, style: "color: green;") %></td>
+            <% else %>
+              <td></td>
+            <% end %>
+          </tr>
+        <% end %>
       <% end %>
     </table>
 
