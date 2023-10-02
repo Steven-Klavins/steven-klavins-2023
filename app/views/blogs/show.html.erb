@@ -1,7 +1,3 @@
-<% if user_signed_in? %>
-  <%= javascript_include_tag('shared/confirmations.js') %>
-<% end %>
-
 <% if @blog.cover_image.attached? %>
   <%= render 'shared/banner', cover_img: @blog.cover_image.url, title: @blog.title, categories: @blog.categories %>
 <% else %>
