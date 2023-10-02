@@ -102,25 +102,6 @@ li {
     margin-top: 6rem;
 }
 
-.file-upload {
-    position: relative;
-    display: flex;
-    font-size: 2rem;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-}
-
-.file-upload [type=file] {
-    margin-left: 1rem;
-    height: 100%;
-}
-
-.file-upload label {
-    display: block;
-    font-size: 2rem;
-    font-family: Roboto-Regular;
-}
-
 .pagination-block {
     width: 100%;
     text-align: center;
@@ -190,19 +171,6 @@ li {
     font-size: 2rem;
     width: 100%;
     font-family: Roboto-Regular;
-}
-
-/* ===== Action Text ===== */
-
-.trix-overrides {
-    width: 80%;
-    max-width: 120rem;
-    font-size: 2rem;
-    margin: 0 auto 18rem;
-}
-
-trix-editor {
-    min-height: 100rem;
 }
 
 /* ===== Banner ===== */

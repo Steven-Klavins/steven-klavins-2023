@@ -1,0 +1,47 @@
+<%= form_with(model: experience) do |form| %>
+  <% if experience.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(experience.errors.count, "error") %> prohibited this experience from being saved:</h2>
+
+      <ul>
+        <% experience.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="sk-edit-form">
+    <div>
+      <%= form.text_field :company, placeholder: "Company Name" %>
+    </div>
+
+    <div>
+      <%= form.text_field :position, placeholder: "Position" %>
+    </div>
+
+    <div class="file-upload">
+      <%= form.label :company_logo, style: "display: block" %>
+      <%= form.file_field :company_logo %>
+    </div>
+
+    <div>
+      <%= form.label :description, style: "display: block" %>
+      <%= form.text_area :description %>
+    </div>
+
+    <div>
+      <%= form.label :start_date, style: "display: block" %>
+      <%= form.date_field :start_date %>
+    </div>
+
+    <div>
+      <%= form.label :end_date, style: "display: block" %>
+      <%= form.date_field :end_date %>
+    </div>
+
+    <div>
+      <%= form.submit %>
+    </div>
+  </div>
+<% end %>

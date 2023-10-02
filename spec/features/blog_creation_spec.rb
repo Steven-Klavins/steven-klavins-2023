@@ -44,9 +44,9 @@ RSpec.feature "Blog Creation", type: :feature do
     scenario "An admin can delete an existing blog", js: true do
       visit blog_path(id: @blog_1.id)
       within '.blog-actions' do
-        find("#delete").click
+        find("#delete-blog-#{@blog_1.id}").click
       end
-      click_on "Delete"
+      find("#destroy-blog-#{@blog_1.id}").click
       expect(page).to_not have_content "Awesome Blog"
     end
 

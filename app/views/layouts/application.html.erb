@@ -48,6 +48,7 @@
   <% # Only include edit action JS when an admin is logged in %>
   <% if current_user %>
     <%= javascript_include_tag('description_editor/description_editor.js') %>
+    <%= javascript_include_tag('shared/delete_confirmation_for.js') %>
   <% end  %>
 
   <%= csrf_meta_tags %>

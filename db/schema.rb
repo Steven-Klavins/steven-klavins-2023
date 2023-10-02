@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_09_27_114122) do
+ActiveRecord::Schema[7.0].define(version: 2023_09_28_210518) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -75,6 +75,17 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_27_114122) do
     t.datetime "updated_at", null: false
     t.string "slug"
     t.index ["slug"], name: "index_categories_on_slug", unique: true
+  end
+
+  create_table "experiences", force: :cascade do |t|
+    t.string "company"
+    t.string "position"
+    t.text "description"
+    t.date "start_date"
+    t.date "end_date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "company_url"
   end
 
   create_table "friendly_id_slugs", force: :cascade do |t|

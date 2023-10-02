@@ -2,7 +2,7 @@
   <div class="blog-container">
     <div class="blog-cards">
       <div>
-        <% blogs.each do |blog| %>
+        <% blogs.includes(:cover_image_attachment, :categories).each do |blog| %>
           <div class="blog-card-container">
             <a href="<%= blog_path blog %>" style="width: 100%">
               <div class="blog-card"

@@ -1,6 +1,14 @@
 require "active_support/core_ext/integer/time"
 
 Rails.application.configure do
+  # Check for N+1 queries
+  config.after_initialize do
+    Bullet.enable        = true
+    Bullet.alert         = true
+    Bullet.bullet_logger = true
+    Bullet.console       = true
+  end
+
   # Settings specified here will take precedence over those in config/application.rb.
 
   # In the development environment your application's code is reloaded any time
@@ -81,4 +89,7 @@ Rails.application.configure do
   # Default Url for Devise
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 
+  config.after_initialize do
+    Bullet.enable = true
+  end
 end

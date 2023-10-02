@@ -144,36 +144,6 @@
     font-size: 3rem;
 }
 
-/* ==== Experience ==== */
-
-.organizations-block {
-    width: 80%;
-    max-width: 160rem;
-    margin: 2rem auto 0rem;
-    text-align: center;
-    padding-top: 2rem;
-}
-
-.organizations-block p {
-    width: 100%;
-    margin: 0 auto;
-    max-width: 100rem;
-    font-size: 1.5rem;
-    font-family: Roboto-Regular;
-    padding-top: 2rem;
-}
-
-.organizations-block h3 {
-    font-size: 2rem;
-    margin: 0rem auto auto;
-}
-
-.organizations-block img {
-    max-height: 10rem;
-    max-width: 100%;
-    margin-bottom: 1rem;
-}
-
 /* ==== Areas Of interest ==== */
 
 .areas-of-interest-container {
