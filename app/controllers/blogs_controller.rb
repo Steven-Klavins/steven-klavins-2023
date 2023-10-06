@@ -10,8 +10,6 @@ class BlogsController < ApplicationController
 
   # GET /blogs
   def index
-    # Eager load with_attached cover image/categories and paginate with page
-    @blogs = Blog.where(draft: false).includes(:cover_image_attachment, :categories).order(created_at: :desc).page params[:page]
   end
 
   # GET /blogs/:title
@@ -27,6 +25,18 @@ class BlogsController < ApplicationController
 
   # GET /blogs/:title/edit
   def edit
+  end
+
+  # Rendered via content-loader in index.
+  def lazy_load_blogs
+    @blogs = Blog.where(draft: false).includes(
+      { cover_image_attachment: :blob }, :categories).order(created_at: :desc).page params[:page]
+    render partial: "shared/blogs_collection",
+           locals: {
+             blogs: @blogs,
+             controller_named: "blogs",
+             action_named: "index"
+           }
   end
 
   # Update draft status and publish blog
