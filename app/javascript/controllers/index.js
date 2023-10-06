@@ -1,6 +1,9 @@
 // Import and register all your controllers from the importmap under controllers/*
-
 import { application } from "controllers/application"
+
+// Import content loader and register
+import ContentLoader from 'stimulus-content-loader'
+application.register('content-loader', ContentLoader)
 
 // Eager load all controllers defined in the import map under controllers/**/*_controller
 import { eagerLoadControllersFrom } from "@hotwired/stimulus-loading"
