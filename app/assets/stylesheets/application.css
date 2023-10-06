@@ -173,6 +173,15 @@ li {
     font-family: Roboto-Regular;
 }
 
+/* ===== Loaders ===== */
+
+.loading-message {
+    display: block;
+    text-align: center;
+    font-size: 2rem;
+    font-family: Roboto-Regular;
+}
+
 /* ===== Banner ===== */
 
 .main-banner {
