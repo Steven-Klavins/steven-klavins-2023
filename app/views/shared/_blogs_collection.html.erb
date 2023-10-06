@@ -2,12 +2,12 @@
   <div class="blog-container">
     <div class="blog-cards">
       <div>
-        <% blogs.includes(:cover_image_attachment, :categories).each do |blog| %>
+        <% @blogs.each do |blog| %>
           <div class="blog-card-container">
             <a href="<%= blog_path blog %>" style="width: 100%">
               <div class="blog-card"
                    <% if blog.cover_image.attached? %>
-                   style="background-image: url('<%= url_for(blog.cover_image.url) %>');"
+                   style="background-image: url('<%= url_for(blog.cover_image_webp) %>');"
                    <% end %>
                    >
                 <h3><%= blog.title %></h3>
@@ -34,18 +34,19 @@
           </div>
         <% end %>
 
-        <% unless blogs.count % 2 == 0 %>
+        <% unless @blogs.count % 2 == 0 %>
           <div class="blog-card-container"></div>
         <% end %>
       </div>
 
       <div class="pagination-block">
-        <%= paginate blogs %>
+        <% # Override default action in blogs, prevent lazy_load_blogs from being used %>
+        <%= paginate @blogs, params: { controller: controller_named, action: action_named }, url: @pagination_path %>
       </div>
     </div>
 
     <div class="blog-categories-box">
-      <h3>Catigories</h3>
+      <h3>Categories</h3>
       <ul>
         <li>
           <a href="<%= blogs_path %>">All</a>
