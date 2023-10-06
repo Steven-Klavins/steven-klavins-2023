@@ -1,7 +1,10 @@
 <% if @category.cover_image.url %>
-  <%= render 'shared/banner', cover_img: @category.cover_image.url, title: "#{@category.name} Blogs" %>
+  <%= render 'shared/banner', cover_img: @category.cover_image_webp.url, title: "#{@category.name} Blogs" %>
 <% else %>
   <%= render 'shared/banner', title: "#{@category.name} Blogs" %>
 <% end %>
 
-<%= render 'shared/blogs_collection', blogs: @blogs %>
+<% # Use stimulus content loader for blogs_collection, pass the page param for pagination. %>
+<div data-controller="content-loader" data-content-loader-url-value="<%= lazy_load_categories_path(page: params[:page], id: params[:id]) %>">
+  <span class="loading-message">Loading blogs...</span>
+</div>
