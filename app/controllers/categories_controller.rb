@@ -10,9 +10,6 @@ class CategoriesController < ApplicationController
 
   # GET /blogs/category/:name
   def show
-    blogs = Category.find(params[:id]).blogs
-    # Only return published blogs
-    @blogs = blogs.where(draft: false).order(created_at: :desc).page params[:page]
   end
 
   # GET /blogs/category/new
@@ -22,6 +19,20 @@ class CategoriesController < ApplicationController
 
   # GET /blogs/category/:name/edit
   def edit
+  end
+
+  # Rendered via content-loader in show.
+  def lazy_load_categories
+    blogs = Category.find(params[:id]).blogs
+    @blogs = blogs.where(draft: false).includes(
+      { cover_image_attachment: :blob }, :categories).order(created_at: :desc).page params[:page]
+
+    render partial: "shared/blogs_collection",
+           locals: {
+             blogs: @blogs,
+             controller_named: "categories",
+             action_named: "show"
+           }
   end
 
   # POST /blogs/category
@@ -63,13 +74,14 @@ class CategoriesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_category
-      @category = Category.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def category_params
-      params.require(:category).permit(:name, :cover_image)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_category
+    @category = Category.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def category_params
+    params.require(:category).permit(:name, :cover_image)
+  end
 end
