@@ -1,18 +1,19 @@
 class PagesController < ApplicationController
-    before_action :authenticate_user!, only: [:admin_panel]
+  before_action :authenticate_user!, only: [:admin_panel]
 
-    def home
-    end
+  def home
+    @experiences = Experience.includes(company_logo_attachment: [:blob])
+  end
 
-    def contact
-    end
+  def contact
+  end
 
-    def about
-    end
+  def about
+  end
 
-    def thanks
-    end
+  def thanks
+  end
 
-    def admin_panel
-    end
+  def admin_panel
+  end
 end

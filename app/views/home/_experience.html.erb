@@ -1,8 +1,5 @@
-<% # Eager load experiences %>
-<% experiences = Experience.includes(company_logo_attachment: [:blob]) %>
-
-<% if experiences.any? %>
-  <% experiences.each do |experience| %>
+<% if @experiences.any? %>
+  <% @experiences.each do |experience| %>
     <div class="experience">
       <a href="<%= experience.company_url %>">
         <%= image_tag(experience.company_logo, alt: "#{experience.company} Logo") %>
