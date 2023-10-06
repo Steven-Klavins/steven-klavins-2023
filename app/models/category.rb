@@ -14,4 +14,17 @@ class Category < ApplicationRecord
 
   # UI
   paginates_per 5
+
+  # Image optimization
+  def cover_image_webp
+    cover_image.variant(
+      format: :webp,
+      resize_to_limit: [1500, 1500],
+      saver: {
+        subsample_mode: "on",
+        strip: true,
+        interlace: true,
+        lossless: false,
+        quality: 100 }).processed
+  end
 end
