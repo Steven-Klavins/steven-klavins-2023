@@ -15,4 +15,17 @@ class Blog < ApplicationRecord
   # UI
   has_rich_text :body
   paginates_per 10
+
+  # Image optimization
+  def cover_image_webp
+    cover_image.variant(
+      format: :webp,
+      resize_to_limit: [1200, 1200],
+      saver: {
+        subsample_mode: "on",
+        strip: true,
+        interlace: true,
+        lossless: false,
+        quality: 80 }).processed
+  end
 end

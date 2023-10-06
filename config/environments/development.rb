@@ -7,6 +7,7 @@ Rails.application.configure do
     Bullet.alert         = true
     Bullet.bullet_logger = true
     Bullet.console       = true
+    Bullet.rails_logger = true
   end
 
   # Settings specified here will take precedence over those in config/application.rb.

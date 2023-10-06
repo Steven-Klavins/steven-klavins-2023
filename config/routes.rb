@@ -34,6 +34,10 @@ Rails.application.routes.draw do
 
   # Pages
   root to: 'pages#home'
+
+  # Blog loading
+  get "/lazy_load_blogs", to: "blogs#lazy_load_blogs"
+  get "/lazy_load_categories", to: "categories#lazy_load_categories"
   
   get 'contact', to: 'pages#contact', as: 'contact'
   get 'about', to: 'pages#about', as: 'about'

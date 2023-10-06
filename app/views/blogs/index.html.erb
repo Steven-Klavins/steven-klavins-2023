@@ -1,2 +1,5 @@
 <%= render 'shared/banner', title: "Blog", cover_img: image_url("banner_img_2.jpeg") %>
-<%= render 'shared/blogs_collection', blogs: @blogs %>
+<% # Use stimulus content loader for blogs_collection, pass the page param for pagination. %>
+<div data-controller="content-loader" data-content-loader-url-value="<%= lazy_load_blogs_path(page: params[:page]) %>">
+  <span class="loading-message">Loading blogs...</span>
+</div>

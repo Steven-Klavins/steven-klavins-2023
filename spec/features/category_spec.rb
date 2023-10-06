@@ -28,35 +28,35 @@ RSpec.feature "Blog Creation", type: :feature do
   end
 
   context "Blogs should sort by specified categories" do
-    scenario "The blog home page should contain all blogs from all categories" do
+    scenario "The blog home page should contain all blogs from all categories", js: true do
       visit blogs_path
       expect(page).to have_content "Awesome Blog 1"
       expect(page).to have_content "Awesome Blog 2"
       expect(page).to have_content "Awesome Blog 3"
     end
 
-    scenario "Category 1 should only show it's associated blogs" do
+    scenario "Category 1 should only show it's associated blogs", js: true do
       visit category_path @cat_1
       expect(page).to have_content "Awesome Blog 2"
       expect(page).to have_content "Awesome Blog 3"
       expect(page).to_not have_content "Awesome Blog 1"
     end
 
-    scenario "Category 2 should only show it's associated blogs" do
+    scenario "Category 2 should only show it's associated blogs", js: true do
       visit category_path @cat_2
       expect(page).to have_content "Awesome Blog 3"
       expect(page).to_not have_content "Awesome Blog 1"
       expect(page).to_not have_content "Awesome Blog 2"
     end
 
-    scenario "Category 3 should only show it's associated blogs" do
+    scenario "Category 3 should only show it's associated blogs", js: true do
       visit category_path @cat_3
       expect(page).to have_content "Awesome Blog 1"
       expect(page).to_not have_content "Awesome Blog 2"
       expect(page).to_not have_content "Awesome Blog 3"
     end
 
-    scenario "All categories should be present to select from the side panel" do
+    scenario "All categories should be present to select from the side panel", js: true do
       # Clear the blog page to ensure the expectation is not confused blog tags.
       Blog.delete_all
       visit blogs_path

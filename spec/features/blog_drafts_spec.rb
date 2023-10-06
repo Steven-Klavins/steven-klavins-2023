@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.feature "Blog Drafts", type: :feature do
 
   before(:each) do
-    @category = Category.create(name: "Java")
+    @category = Category.create!(name: "Java")
     @blog_1 = Blog.create!(title: "Awesome Blog", body: "Some good content")
     @user = User.create!(email: "test@testing.net", password: "123456")
 
@@ -20,7 +20,7 @@ RSpec.feature "Blog Drafts", type: :feature do
       expect(page).to have_content "Admin"
     end
 
-    scenario "When a blog is updated as a draft we should redirect to the admin panel" do
+    scenario "When a blog is updated as a draft we should redirect to the admin panel", js: true do
       visit blogs_path
       click_on "Awesome Blog"
       click_on "Edit"
@@ -29,7 +29,7 @@ RSpec.feature "Blog Drafts", type: :feature do
       expect(page).to have_content "Admin"
     end
 
-    scenario "When a blog is updated as a draft it should not be viewable on the show page" do
+    scenario "When a blog is updated as a draft it should not be viewable on the show page", js: true do
       visit blogs_path
       click_on "Awesome Blog"
       click_on "Edit"
@@ -50,14 +50,12 @@ RSpec.feature "Blog Drafts", type: :feature do
     end
 
     scenario "A blog marked a draft should not show in categories either" do
-      visit blogs_path
-      click_on "Awesome Blog"
+      visit blog_path(@blog_1)
       click_on "Edit"
       select "Java", from: "blog_category_ids"
       check "Draft"
       click_on "Update Blog"
-      visit blogs_path
-      click_on "Java"
+      visit category_path(@category)
       expect(page).to_not have_content "Awesome Blog"
     end
 
