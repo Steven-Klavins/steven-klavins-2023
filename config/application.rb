@@ -17,6 +17,9 @@ module StevenKlavins2023
     # Compress HTML Responses
     config.middleware.use Rack::Deflater
 
+    # Ensure assets enabled
+    config.assets.enabled = true
+
     # Use VIPs
     Rails.application.config.active_storage.variant_processor = :vips
 
