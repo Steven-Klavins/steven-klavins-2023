@@ -1,3 +1,3 @@
-compile: bundle exec rake assets:precompile
-release: bundle exec rake db:migrate
-refresh: bundle exec sitemap:refresh
+console: bundle exec rake assets:precompile
+console: bundle exec rake db:migrate
+console: bundle exec sitemap:refresh
