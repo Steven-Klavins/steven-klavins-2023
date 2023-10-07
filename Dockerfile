@@ -20,5 +20,8 @@ ENV RAILS_LOG_TO_STDOUT="1" \
   COPY Gemfile* .
   RUN bundle install
   COPY . .
+
+  # Precompile assets
+  RUN bundle exec rake assets:precompile
   EXPOSE 3000
   CMD ["rails", "server", "-b", "0.0.0.0"]
