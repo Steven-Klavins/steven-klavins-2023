@@ -20,9 +20,6 @@ module StevenKlavins2023
     # Ensure assets enabled
     config.assets.enabled = true
 
-    # Precompile everything needed
-    config.assets.precompile += %w( *.js *.css *.jpg *jpeg *.png *.svg *ico *.ttf *.woff *.eot )
-
     # Use VIPs
     Rails.application.config.active_storage.variant_processor = :vips
 
