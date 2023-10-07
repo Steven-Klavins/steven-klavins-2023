@@ -1,6 +1,6 @@
 class BlogsController < ApplicationController
   # Authenticate user
-  before_action :authenticate_user!, except: [:index, :show]
+  before_action :authenticate_user!, except: [:index, :show, :lazy_load_blogs]
   before_action :set_blog, only: %i[ show edit update destroy ]
 
   # Needed for image URLs to be accessible
