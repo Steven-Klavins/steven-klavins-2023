@@ -1,6 +1,6 @@
 class CategoriesController < ApplicationController
   # Authenticate user
-  before_action :authenticate_user!, except: [:index, :show]
+  before_action :authenticate_user!, except: [:index, :show, :lazy_load_categories]
   before_action :set_category, only: %i[ show edit update destroy ]
 
   # Needed for image URLs to be accessible
