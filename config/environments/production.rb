@@ -33,6 +33,9 @@ Rails.application.configure do
   # Precompile everything needed
   config.assets.precompile += %w( *.js *.css *.jpg *.jpeg *.png *.svg *ico *.ttf *.woff *.eot )
 
+  # Serve static assets
+  config.serve_static_assets = true
+
   # Enable serving of images, stylesheets, and JavaScripts from an asset server.
   # config.asset_host = "http://assets.example.com"
 
@@ -103,9 +106,6 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
-
-  # Include SVGs.
-  config.assets.precompile += %w( '.svg' )
 
   # Sidekiq background jobs
   config.active_job.queue_adapter = :sidekiq
