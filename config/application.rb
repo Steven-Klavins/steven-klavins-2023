@@ -20,6 +20,9 @@ module StevenKlavins2023
     # Ensure assets enabled
     config.assets.enabled = true
 
+    # Serve static assets
+    config.serve_static_assets = true
+
     # Use VIPs
     Rails.application.config.active_storage.variant_processor = :vips
 
