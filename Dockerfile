@@ -24,4 +24,4 @@ ENV RAILS_LOG_TO_STDOUT="1" \
   EXPOSE 3000
   CMD ["rails", "server", "-b", "0.0.0.0"]
   # Precompile assets
-  RUN RAILS_ENV=production bundle exec rake assets:precompile
+  RUN RAILS_ENV=production SECRET_KEY_BASE=$SECRET_KEY_BASE bundle exec rake assets:precompile
