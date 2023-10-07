@@ -1,1 +1,2 @@
-worker: bundle exec sidekiq -C config/sidekiq.yml
+release: bundle exec rake assets:precompile
+release: bundle exec sitemap:refresh
