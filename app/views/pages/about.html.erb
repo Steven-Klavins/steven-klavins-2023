@@ -1,6 +1,4 @@
 <%= render 'shared/banner', title: "About", cover_img: image_url("banner_img_2.jpeg") %>
-<%= javascript_include_tag('shared/page_transitions.js') %>
-
 <div class="about">
   <div class="about-row">
     <h3>Background</h3>
@@ -33,6 +31,8 @@
     <%= editable_description("About", "hobbies_p3") %>
   </div>
 </div>
+
+<%= javascript_include_tag('shared/page_transitions.js') %>
 
 <script>
     // Setup listeners for scroll event fade ins.
