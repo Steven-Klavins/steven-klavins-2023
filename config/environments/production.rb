@@ -31,7 +31,7 @@ Rails.application.configure do
   config.assets.compile = false
 
   # Precompile everything needed
-  config.assets.precompile += %w( *.js *.css *.jpg *jpeg *.png *.svg *ico *.ttf *.woff *.eot )
+  config.assets.precompile += %w( *.js *.css *.jpg *.jpeg *.png *.svg *ico *.ttf *.woff *.eot )
 
   # Enable serving of images, stylesheets, and JavaScripts from an asset server.
   # config.asset_host = "http://assets.example.com"
