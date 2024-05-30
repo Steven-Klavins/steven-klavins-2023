@@ -1,21 +1,23 @@
-<p id="<%= section %>">
-  <%= description %>
-  <% if current_user %>
-    <button id="edit-<%= section %>" class="description-editor-open-button" onclick="showEditor('<%= section %>')">Edit</button>
-  <% end %>
-</p>
-
-<% if current_user %>
-  <div id="<%= section %>-editor" class="description-editor" style="display: none">
-    <%= form_with url: update_descriptions_url, id: section + '-description_form', method: :post do |form| %>
-      <%= form.text_area :description, value: description %>
-      <%= form.hidden_field :section, value: section %>
-      <%= form.hidden_field :page, value: page %>
-      <%= form.hidden_field :authenticity_token, value: form_authenticity_token %>
-      <span class="description-editor-button-block">
-      <%= form.submit "Update" %>
-        <button type="button" onclick="closeEditor('<%= section %>')">Close</button>
-    </span>
+<div data-controller="description-editor">
+  <p data-description-editor-target="description" >
+    <%= description %>
+    <% if current_user %>
+      <button id="edit-<%= section %>" class="description-editor-open-button" data-description-editor-target="button" data-action="click->description-editor#toggleEditorVisibility">Edit</button>
     <% end %>
-  </div>
-<% end %>
+  </p>
+
+  <% if current_user %>
+    <div id="<%= section %>-editor" data-description-editor-target="editor" class="description-editor" style="display: none">
+      <%= form_with url: update_descriptions_url, id: section + '-description_form', method: :post do |form| %>
+        <%= form.text_area :description, value: description %>
+        <%= form.hidden_field :section, value: section %>
+        <%= form.hidden_field :page, value: page %>
+        <%= form.hidden_field :authenticity_token, value: form_authenticity_token %>
+        <span class="description-editor-button-block">
+          <%= form.submit "Update" %>
+          <button type="button" data-action="click->description-editor#toggleEditorVisibility">Close</button>
+        </span>
+      <% end %>
+    </div>
+  <% end %>
+</div>
