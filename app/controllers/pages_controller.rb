@@ -2,7 +2,7 @@ class PagesController < ApplicationController
   before_action :authenticate_user!, only: [:admin_panel]
 
   def home
-    @experiences = Experience.includes(company_logo_attachment: [:blob])
+    @experiences = Experience.order(created_at: :desc).includes(company_logo_attachment: [:blob])
   end
 
   def contact
