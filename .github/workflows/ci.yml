@@ -1,5 +1,5 @@
 name: CI
-on : [push, pull_request]
+on: [push, pull_request]
 jobs: 
   test:
     runs-on: ubuntu-latest
@@ -10,9 +10,14 @@ jobs:
         env: 
           POSTGRES_USER: postgres
           POSTGRES_PASSWORD: postgres
+        options: >-
+          --health-cmd "pg_isready -U postgres"
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
     env:
       RAILS_ENV: test
-      DATABASE_URL: "postgres://postgres:@localhost:5432/steven_klavins_2023_test"
+      DATABASE_URL: "postgres://postgres:postgres@localhost:5432/steven_klavins_2023_test"
       RAILS_MASTER_KEY: ${{ secrets.RAILS_MASTER_KEY }}
     steps:
     - uses: actions/checkout@v3
@@ -24,8 +29,15 @@ jobs:
       with:
           chrome-version: 'stable'
     - run: chrome --version
-    - name: Set up database schema
+    - name: Wait for Postgres
       run: |
-        bundle exec rake db:create
-        bundle exec rake db:migrate
-        bundle exec rspec
+        until pg_isready -h localhost -p 5432 -U postgres; do
+          echo "Waiting for Postgres..."
+          sleep 1
+        done
+    - name: Create database
+      run: bundle exec rake db:create
+    - name: Migrate database
+      run: bundle exec rake db:migrate
+    - name: Run tests
+      run: bundle exec rspec
