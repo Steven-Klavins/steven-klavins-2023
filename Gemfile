@@ -1,7 +1,7 @@
 source "https://rubygems.org"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby "3.2.2"
+ruby "3.4.7"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.4", ">= 7.0.4.3"
@@ -54,8 +54,10 @@ group :development, :test do
   gem "byebug"
   gem 'rspec-rails'
   gem "letter_opener"
-  # Use bullet to check for N+1 queries
+  # Use bullet to check for N+1 queries [https://github.com/flyerhzm/bullet]
   gem "bullet"
+  # Faker for dummy data [https://github.com/faker-ruby/faker]
+  gem 'faker'
 end
 
 group :development do

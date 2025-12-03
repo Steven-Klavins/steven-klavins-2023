@@ -7,5 +7,5 @@ pin "@hotwired/stimulus-loading", to: "stimulus-loading.js", preload: true
 pin_all_from "app/javascript/controllers", under: "controllers"
 pin "trix"
 pin "@rails/actiontext", to: "actiontext.js"
-pin "slim-select", to: "https://ga.jspm.io/npm:slim-select@2.5.0/dist/slimselect.es.js"
+pin "slim-select" # @3.2.0
 pin "stimulus-content-loader", to: "https://ga.jspm.io/npm:stimulus-content-loader@4.2.0/dist/stimulus-content-loader.mjs"
