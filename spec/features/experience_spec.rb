@@ -39,9 +39,11 @@ RSpec.feature "Experience", type: :feature do
     end
 
     scenario "An admin should be able to delete an experience", js: true do
+      experience_id = Experience.last.id
       visit root_path
-      find("#delete-experience-#{Experience.last.id}").click
-      find("#destroy-experience-#{Experience.last.id}").click
+      find("#delete-experience-#{experience_id}").click
+      find("#destroy-experience-#{experience_id}").click
+      expect(page).to have_no_css("#destroy-experience-#{experience_id}", wait: 20)
       expect(Experience.count).to eq(0)
     end
 
