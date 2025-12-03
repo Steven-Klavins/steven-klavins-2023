@@ -4,7 +4,8 @@ FROM ruby:$RUBY_VERSION
 
 # Install libvips for Active Storage preview support
 RUN apt-get update -qq && \
-    apt-get install -y build-essential libvips bash bash-completion libffi-dev tzdata postgresql nodejs npm yarn ca-certificates s3cmd && \
+    apt-get install -y build-essential libvips bash bash-completion libffi-dev tzdata postgresql nodejs npm ca-certificates s3cmd && \
+    corepack enable && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* /usr/share/doc /usr/share/man
 
