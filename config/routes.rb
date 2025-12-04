@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   devise_scope :user do
     authenticated :user do
       mount Sidekiq::Web => "/sidekiq"
-      get '/admin-panel', to: 'pages#admin_panel'
+      get '/admin-panel', to: 'admin_panel#index'
       post '/update-descriptions', to: 'description_editor#update_yaml_description'
       get '/publish-blog/:id' , to: 'blogs#publish', as: "publish-blog"
       resources :experiences, except: [:show]
@@ -30,16 +30,19 @@ Rails.application.routes.draw do
     get '/page/:page', action: :index, on: :collection
   end
 
-  resources :contact_form, only: %i[new create]
+  resources :contact, only: [:index] do
+    collection do
+      post :submit_contact_form
+    end
+  end
 
   # Pages
-  root to: 'pages#home'
+  root to: 'home#index'
+  get 'contact', to: 'contact#index', as: 'contact'
+  get 'about', to: 'about#index', as: 'about'
+  get 'thanks', to: 'thank_you#index', as: 'thanks'
 
   # Blog loading
   get "/lazy_load_blogs", to: "blogs#lazy_load_blogs"
   get "/lazy_load_categories", to: "categories#lazy_load_categories"
-  
-  get 'contact', to: 'pages#contact', as: 'contact'
-  get 'about', to: 'pages#about', as: 'about'
-  get 'thanks', to: 'pages#thanks', as: 'thanks'
 end
