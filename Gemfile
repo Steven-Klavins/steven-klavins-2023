@@ -87,3 +87,4 @@ gem "devise", "~> 4.9"
 # Scheduling and generating sitemaps
 gem 'whenever', require: false
 gem "sitemap_generator", "~> 6.3"
+gem "tailwindcss-rails", "~> 4.4"
