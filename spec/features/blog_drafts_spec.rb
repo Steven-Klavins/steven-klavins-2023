@@ -68,6 +68,7 @@ RSpec.feature "Blog Drafts", type: :feature do
       uncheck "Draft"
       click_on "Update Blog"
       visit blogs_path
+      expect(page).to have_content("Blog", wait: 40)
       blog_categories_box = find('.blog-categories-box')
       within(blog_categories_box) do
         click_link('Java')
@@ -96,6 +97,7 @@ RSpec.feature "Blog Drafts", type: :feature do
       uncheck "Draft"
       click_on "Update Blog"
       visit admin_panel_path
+      expect(page).to have_content("Admin", wait: 20)
       click_on "Drafts ⏷"
       expect(page).to_not have_content "Draft Blog 3"
     end
