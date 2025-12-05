@@ -46,9 +46,8 @@ RSpec.feature "Blog Drafts", type: :feature do
       click_on "Edit"
       check "Draft"
       click_on "Update Blog"
-      expect(page).to have_content("Admin", wait: 100)
-      click_on "Drafts ⏷"
-      expect(page).to have_content("Awesome Blog", wait: 20)
+      find('#draft-toggle-button').click
+      expect(page).to have_content("Awesome Blog")
     end
 
     scenario "A blog marked a draft should not show in categories either" do
@@ -65,14 +64,13 @@ RSpec.feature "Blog Drafts", type: :feature do
       blog = Blog.create!(title: "Draft Blog", body: "Some good content", draft: true)
       BlogsCategory.create!(blog_id: blog.id, category_id: @category.id)
       visit admin_panel_path
-      expect(page).to have_content("Admin", wait: 100)
-      click_on "Drafts ⏷"
+      find('#draft-toggle-button').click
       find("a[href='#{edit_blog_path(blog)}']").click
       uncheck "Draft"
       click_on "Update Blog"
       visit blogs_path
-      expect(page).to have_content("Blog", wait: 100)
-      expect(page).to have_selector(".blog-categories-box", wait: 20)
+      expect(page).to have_content("Blog")
+      expect(page).to have_selector(".blog-categories-box")
       within('.blog-categories-box') do
         click_link 'Java'
       end
@@ -83,35 +81,33 @@ RSpec.feature "Blog Drafts", type: :feature do
       blog = Blog.create!(title: "Draft Blog 2", body: "Some good content", draft: true)
       BlogsCategory.create!(blog_id: blog.id, category_id: @category.id)
       visit admin_panel_path
-      expect(page).to have_content("Admin", wait: 100)
-      click_on "Drafts ⏷"
+      expect(page).to have_content("Admin")
+      find('#draft-toggle-button').click
       find("a[href='#{edit_blog_path(blog)}']").click
       uncheck "Draft"
       click_on "Update Blog"
       visit blogs_path
-      expect(page).to have_content("Draft Blog 2", wait: 20)
+      expect(page).to have_content("Draft Blog 2")
     end
 
     scenario "A blog no longer marked as a draft should no longer show in the admin panel", js: true do
       blog = Blog.create!(title: "Draft Blog 3", body: "Some good content", draft: true)
       BlogsCategory.create!(blog_id: blog.id, category_id: @category.id)
       visit admin_panel_path
-      expect(page).to have_content("Admin", wait: 100)
-      click_on "Drafts ⏷"
+      find('#draft-toggle-button').click
       find("a[href='#{edit_blog_path(blog)}']").click
       uncheck "Draft"
       click_on "Update Blog"
       visit admin_panel_path
-      expect(page).to have_content("Admin", wait: 100)
-      click_on "Drafts ⏷"
-      expect(page).to_not have_content("Draft Blog 3", wait: 20)
+      expect(page).to have_content("Admin")
+      find('#draft-toggle-button').click
+      expect(page).to_not have_content("Draft Blog 3")
     end
 
     scenario "Publishing a blog should remove it from drafts", js: true do
       Blog.create!(title: "Draft Blog 4", body: "Some good content", draft: true)
       visit admin_panel_path
-      expect(page).to have_content("Admin", wait: 100)
-      click_on "Drafts ⏷"
+      find('#draft-toggle-button').click
       click_on "Publish"
       expect(Blog.last.draft).to eq(false)
     end
