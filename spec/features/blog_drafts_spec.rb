@@ -1,4 +1,5 @@
 require 'rails_helper'
+require 'trix_helper'
 
 RSpec.feature "Blog Drafts", type: :feature do
 
