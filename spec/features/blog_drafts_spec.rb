@@ -70,10 +70,7 @@ RSpec.feature "Blog Drafts", type: :feature do
       click_on "Update Blog"
       visit blogs_path
       expect(page).to have_content("Blog")
-      expect(page).to have_selector(".blog-categories-box")
-      within('.blog-categories-box') do
-        click_link 'Java'
-      end
+      click_link 'Java'
       expect(page).to have_content "Draft Blog"
     end
 
