@@ -46,6 +46,7 @@ RSpec.feature "Blog Drafts", type: :feature do
       click_on "Edit"
       check "Draft"
       click_on "Update Blog"
+      expect(page).to have_selector('#draft-toggle-button')
       find('#draft-toggle-button').click
       expect(page).to have_content("Awesome Blog")
     end
@@ -64,13 +65,14 @@ RSpec.feature "Blog Drafts", type: :feature do
       blog = Blog.create!(title: "Draft Blog", body: "Some good content", draft: true)
       BlogsCategory.create!(blog_id: blog.id, category_id: @category.id)
       visit admin_panel_path
+      expect(page).to have_selector('#draft-toggle-button')
       find('#draft-toggle-button').click
       find("a[href='#{edit_blog_path(blog)}']").click
       uncheck "Draft"
       click_on "Update Blog"
       visit blogs_path
       expect(page).to have_content("Blog")
-      click_link 'Java'
+      within(".blog-categories-box") { click_link "Java" }
       expect(page).to have_content "Draft Blog"
     end
 
@@ -78,7 +80,7 @@ RSpec.feature "Blog Drafts", type: :feature do
       blog = Blog.create!(title: "Draft Blog 2", body: "Some good content", draft: true)
       BlogsCategory.create!(blog_id: blog.id, category_id: @category.id)
       visit admin_panel_path
-      expect(page).to have_content("Admin")
+      expect(page).to have_selector('#draft-toggle-button')
       find('#draft-toggle-button').click
       find("a[href='#{edit_blog_path(blog)}']").click
       uncheck "Draft"
@@ -91,12 +93,13 @@ RSpec.feature "Blog Drafts", type: :feature do
       blog = Blog.create!(title: "Draft Blog 3", body: "Some good content", draft: true)
       BlogsCategory.create!(blog_id: blog.id, category_id: @category.id)
       visit admin_panel_path
+      expect(page).to have_selector('#draft-toggle-button')
       find('#draft-toggle-button').click
       find("a[href='#{edit_blog_path(blog)}']").click
       uncheck "Draft"
       click_on "Update Blog"
       visit admin_panel_path
-      expect(page).to have_content("Admin")
+      expect(page).to have_selector('#draft-toggle-button')
       find('#draft-toggle-button').click
       expect(page).to_not have_content("Draft Blog 3")
     end
@@ -104,6 +107,7 @@ RSpec.feature "Blog Drafts", type: :feature do
     scenario "Publishing a blog should remove it from drafts", js: true do
       Blog.create!(title: "Draft Blog 4", body: "Some good content", draft: true)
       visit admin_panel_path
+      expect(page).to have_selector('#draft-toggle-button')
       find('#draft-toggle-button').click
       click_on "Publish"
       expect(Blog.last.draft).to eq(false)
